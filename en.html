@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoori Archive</title>
+  <link rel="icon" href="image/favicon.png?v=2" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button class="menu-toggle" id="menuToggle">LIST</button>
+  <a class="lang-btn" id="langBtn" href="index.html">KO</a>
+  <div class="menu-divider" id="menuDivider"></div>
+
+  <div class="menu-panel" id="menuPanel">
+    <button class="menu-close-btn" id="menuCloseBtn">Yoori</button>
+  </div>
+
+  <div class="layout" id="layout">
+    <div class="left">
+      <img class="left-image" id="leftImage" src="" alt="">
+    </div>
+    <div class="right" id="rightPanel">
+      <img class="right-cover" id="rightCover" src="" alt="">
+      <div class="project-images" id="projectImages"></div>
+      <div class="text-content" id="textContent"></div>
+    </div>
+  </div>
+
+<script>
+// ── 배경색 랜덤 ───────────────────────────────────────────────────────
+const bgPalette = ['#ffffff', '#ffffff', '#ffffff', '#ffffff'];
+document.documentElement.style.setProperty('--bg', bgPalette[Math.floor(Math.random() * bgPalette.length)]);
+
+// ── LANDING 이미지 랜덤 ─────────────────────────────────────────────────
+const workImages = [
+  'image/work/work1.jpg','image/work/work2.jpg','image/work/work3.jpg',
+  'image/work/work4.jpg','image/work/work5.jpg','image/work/work6.jpg',
+  'image/work/work7.jpg','image/work/work8.jpg','image/work/work9.jpg',
+];
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const shuffled = shuffle(workImages);
+document.getElementById('leftImage').src  = shuffled[0];
+document.getElementById('rightCover').src = shuffled[1];
+
+// ── 전시 이미지 데이터 ─────────────────────────────────────────────────
+const exhibitionImages = {
+  hakgojae: [
+    'image/exhibition-hakgojae/hakgojae1.jpg',
+    'image/exhibition-hakgojae/hakgojae2.jpg',
+    'image/exhibition-hakgojae/hakgojae3.jpg',
+    'image/exhibition-hakgojae/hakgojae4.jpg',
+    'image/exhibition-hakgojae/hakgojae5.jpg',
+    'image/exhibition-hakgojae/hakgojae6.jpg',
+    'image/exhibition-hakgojae/hakgojae7.jpg',
+    'image/exhibition-hakgojae/hakgojae8.jpg',
+    'image/exhibition-hakgojae/hakgojae9.jpg',
+    'image/exhibition-hakgojae/hakgojae10.jpg',
+    'image/exhibition-hakgojae/hakgojae11.jpg',
+    'image/exhibition-hakgojae/work1.jpg',
+    'image/exhibition-hakgojae/work2.jpg',
+    'image/exhibition-hakgojae/work3.jpg',
+    'image/exhibition-hakgojae/work4.jpg',
+    'image/exhibition-hakgojae/work5.jpg',
+    'image/exhibition-hakgojae/work6.jpg',
+    'image/exhibition-hakgojae/work7.jpg',
+    'image/exhibition-hakgojae/work8.jpg',
+    'image/exhibition-hakgojae/work9.jpg',
+    'image/exhibition-hakgojae/work10.jpg',
+    'image/exhibition-hakgojae/PIX00005.jpg',
+    'image/exhibition-hakgojae/PIX00044.jpg',
+    'image/exhibition-hakgojae/250919_16 복사 복사.jpg',
+    'image/exhibition-hakgojae/250919_54 복사.jpg',
+    'image/exhibition-hakgojae/250919_55 복사.jpg',
+  ],
+};
+
+// ── 메뉴 구조 데이터 (English) ─────────────────────────────────────────
+const menuStructure = [
+  { t: 'sep' },
+  { t: 'nav', label: 'C.V', key: 'cv' },
+  { t: 'sep' },
+  { t: 'nav', label: 'Contact', key: 'contact' },
+  { t: 'sep' },
+  {
+    t: 'acc', label: 'Texts',
+    items: [
+      { t: 'show', id: 'text-1',  label: 'Exhibition Essay for 《Shapeless Loop》, "Shapeless Loop for Our Annyeong(安寧)," by Han Joo-ok' },
+      { t: 'show', id: 'text-2',  label: 'Exhibition Review for 《Shapeless Loop》, "Here Is Where We Meet," by Kim Hae-seo' },
+      { t: 'show', id: 'text-3',  label: 'Arts & Culture Column for Segye Ilbo, "For the Time After the End – Tenderly Calling Back Vanished Beings," by Shin Lisa' },
+      { t: 'show', id: 'text-4',  label: 'Monthly Art, January 2026 issue, [Editor\'s Pick]' },
+      { t: 'show', id: 'text-5',  label: 'Monthly Art, August 2025 issue, [Artist Book Special Feature], artist text "Composing the Unreadable" by Yoori' },
+      { t: 'show', id: 'text-6',  label: 'Art in Culture, January 2025 issue, [FOCUS], "Young Artists Shooting for the Stars"' },
+      { t: 'show', id: 'text-7',  label: 'Monthly Art, February 2024 issue, [UP-AND-COMING ARTISTS], "A Poem Sent to a Being Never Called by Language," by Kim So-jung' },
+      { t: 'show', id: 'text-8',  label: 'Exhibition Essay for 《Non-existent day》, by Park Jung-won' },
+      { t: 'show', id: 'text-9',  label: 'Exhibition Essay for 《Bind Loosely & Loosen tightly》, "The Age of Silence and Pensées of the Night," by Mohee' },
+      { t: 'show', id: 'text-10', label: 'Exhibition Review for 《Hugged tight but couldn\'t reach each other》, "Between My Story and Yours," by Kwon Jung-hyun' },
+    ],
+  },
+  { t: 'sep' },
+  {
+    t: 'acc', label: 'Publications',
+    items: [
+      { t: 'show', id: 'pub-1', label: 'Exhibition Catalogue 『Shapeless Loop』 2026' },
+      { t: 'show', id: 'pub-2', label: 'Exhibition Catalogue 『Golden Arrow』 2025' },
+      { t: 'show', id: 'pub-3', label: 'Monograph (2020-2024) 2024' },
+      { t: 'show', id: 'pub-4', label: 'Exhibition Catalogue 『Hugged tight but couldn\'t reach each other』 2022' },
+    ],
+  },
+  { t: 'sep' },
+  {
+    t: 'acc', label: 'Projects',
+    items: [
+      { t: 'show', id: 'proj-1', label: 'Cover for 『Where No One Comes』 (Cheon Seon-ran, Hubble)' },
+      { t: 'show', id: 'proj-2', label: 'Cover for 『It Lasts Forever and Then It\'s Over』 (Anne de Marcken, Hubble)' },
+      { t: 'show', id: 'proj-3', label: 'Artwork and Album Design for Damons Year, 《HEADACHE.》' },
+      { t: 'show', id: 'proj-4', label: 'Cover Artwork for Damons Year, <Cherry>' },
+      { t: 'show', id: 'proj-5', label: 'Cover Artwork for Damons Year, <Rainbow>' },
+    ],
+  },
+  { t: 'sep' },
+  {
+    t: 'acc', label: 'Works/Exhibitions',
+    items: [
+      {
+        t: 'acc', label: '2026',
+        items: [
+          { t: 'show', id: 'sel-2026', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2026-1', label: "Bird's Gift: Borderline, Byeolgwan, Seoul" },
+          { t: 'show', id: 'exh-2026-2', label: "Microscopic Disaster, oaoa Gallery, Seoul" },
+        ],
+      },
+      {
+        t: 'acc', label: '2025',
+        items: [
+          { t: 'show', id: 'sel-2025', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Solo Exhibition' },
+          { t: 'show', id: 'exh-2025-1', label: 'Transparent Ring, Hakgojae Gallery, Seoul', imgKey: 'hakgojae' },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2025-2', label: 'Small Giants, Gu-haus, Yangpyeong' },
+          { t: 'show', id: 'exh-2025-3', label: 'OCTO-, Page Room 8 & Jiwooheon, Seoul' },
+        ],
+      },
+      {
+        t: 'acc', label: '2024',
+        items: [
+          { t: 'show', id: 'sel-2024', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Solo Exhibition' },
+          { t: 'show', id: 'exh-2024-1', label: 'Days Without, Page Room 8, Seoul' },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2024-2', label: 'Golden Arrow, This Is Not a Church, Seoul' },
+          { t: 'show', id: 'exh-2024-3', label: "The Messenger's Mysterious Bond, Daejeon Museum of Art Creation Center, Daejeon" },
+          { t: 'show', id: 'exh-2024-4', label: 'The Sea Holding a White Harpoon, Seoripul Youth Art Gallery, Seoul' },
+        ],
+      },
+      {
+        t: 'acc', label: '2023',
+        items: [
+          { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Solo Exhibition' },
+          { t: 'show', id: 'exh-2023-1', label: 'Loosely Embrace, Firmly Untangle, Gallery In HQ, Seoul' },
+          { t: 'show', id: 'exh-2023-2', label: 'Double Bind: Artist Book Project, Pocket Tales, Seoul' },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity: Kim Seeun, Yoori Duo Exhibition, Hakgojae Gallery, Seoul' },
+          { t: 'show', id: 'exh-2023-4', label: 'OCTO-, Page Room 8, Seoul' },
+        ],
+      },
+      {
+        t: 'acc', label: '2022',
+        items: [
+          { t: 'show', id: 'sel-2022', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2022-1', label: 'Local Christmas Market, The Untitled Void, Seoul' },
+          { t: 'show', id: 'exh-2022-2', label: 'From an Imperfect World to a Perfect Boundary: Shin Soeun, Yoori Duo Exhibition, Page Room 8, Seoul' },
+          { t: 'show', id: 'exh-2022-3', label: 'Hop, Hop, Hope, Gallery In HQ, Seoul' },
+          { t: 'show', id: 'exh-2022-4', label: 'Drawing Growing, Mihakwan, Seoul' },
+          { t: 'show', id: 'exh-2022-5', label: 'Muddy Forest: Kim Okjeong, Yoori Duo Exhibition, Gallery In, Seoul' },
+          { t: 'show', id: 'exh-2022-6', label: 'Resonance Starting from A, KT&G Sangsang Madang Chuncheon Art Gallery, Chuncheon' },
+        ],
+      },
+      {
+        t: 'acc', label: '2021',
+        items: [
+          { t: 'show', id: 'sel-2021', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Solo Exhibition' },
+          { t: 'show', id: 'exh-2021-1', label: 'And So the Embrace Could Not Become a Sentence, Byeolgwan, Seoul' },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2021-2', label: 'The Painters, Seoul Auction Gangnam Center, Seoul' },
+          { t: 'show', id: 'exh-2021-3', label: 'Cloud Shape: Yoori, Lee Seoyoon Duo Exhibition, Gallery Anobu, Seoul' },
+          { t: 'show', id: 'exh-2021-4', label: 'Until We Meet Again, Artist-Run Space Show and Tell, Seoul' },
+        ],
+      },
+      {
+        t: 'acc', label: '2020',
+        items: [
+          { t: 'show', id: 'sel-2020', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2020-1', label: '10 to the Power of n, Culture Station Seoul 284, Seoul' },
+        ],
+      },
+      {
+        t: 'acc', label: '2019',
+        items: [
+          { t: 'show', id: 'sel-2019', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2019-1', label: 'Zerobase: v2, Seoul Auction Gangnam Center, Seoul' },
+          { t: 'show', id: 'exh-2019-2', label: 'Taipei Artbook Fair, Songshan Cultural Park, Taipei, Taiwan' },
+        ],
+      },
+      {
+        t: 'acc', label: '2018',
+        items: [
+          { t: 'show', id: 'sel-2018', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2018-1', label: 'Consumer - Mat - Popcorn, Temporary space SENENE, Seoul' },
+          { t: 'show', id: 'exh-2018-2', label: 'Twelve Library, Seodaemun Inn, Seoul' },
+        ],
+      },
+      {
+        t: 'acc', label: '2015',
+        items: [
+          { t: 'show', id: 'sel-2015', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'cat', label: 'Group Exhibition' },
+          { t: 'show', id: 'exh-2015-1', label: 'Majoongmul artmarket, Kimreeaa Gallery, Seoul' },
+          { t: 'show', id: 'exh-2015-2', label: 'Sound Of Shout, Toy Republic, Seoul' },
+          { t: 'show', id: 'exh-2015-3', label: 'The Complete Mansion, Samwon Green Mansion, Seoul' },
+        ],
+      },
+    ],
+  },
+];
+
+// ── CV / Contact 영문 콘텐츠 ───────────────────────────────────────────
+const cvHTML = `
+<p class="cv-name">Yoori  b. 1994</p>
+
+<p class="cv-section">Education</p>
+<p class="cv-year">2018</p>
+<p>BFA, Hongik University, Seoul</p>
+
+<p class="cv-section">Solo Exhibitions</p>
+<p class="cv-year">2025</p>
+<p>Shapeless Loop, Hakgojae gallery, Seoul</p>
+<p class="cv-year">2024</p>
+<p>Non-existent Day, Pageroom8, Seoul</p>
+<p class="cv-year">2023</p>
+<p>Bind Loosely & Loosen tightly, Gallery IN HQ, Seoul</p>
+<p>Double Bind : Artist's book project, Pokettales, Seoul</p>
+<p class="cv-year">2021</p>
+<p>Hugged tight but couldn't reach each other, Outhouse, Seoul</p>
+
+<p class="cv-section">Group Exhibitions</p>
+<p class="cv-year">2026</p>
+<p>The Present of Birds : Borderline, Outhouse, Seoul</p>
+<p class="cv-year">2025</p>
+<p>Little Giants, Koohouse museum, Yangpyeing, Gyeonggi-do</p>
+<p>OCTO- , Pageroom8 & Jiwooheon, Seoul</p>
+<p class="cv-year">2024</p>
+<p>Golden Arrow, This Is Not a Church, Seoul</p>
+<p>Mysterious Solidarities of Messengers, Daejeon Art Centre (Daejeon Museum of Art), Daejeon</p>
+<p>The Sea Seeping into the White Pebbles, Seoripul gallery, Seoul</p>
+<p class="cv-year">2023</p>
+<p>Lucid Mystery / Dark Clarity, Hakgojae, Seoul</p>
+<p>OCTO- , Pageroom8, Seoul</p>
+<p class="cv-year">2022</p>
+<p>Local Christmas Market, The Untitled Void, Seoul</p>
+<p>From the Uncomplete World To the Complete Gyeonggye, Shadow Esquisse, Pageroom8, Seoul</p>
+<p>Hop, Hop, Hope, Gallery IN HQ, Seoul</p>
+<p>Drawing Growing, Mihakgwan, Seoul</p>
+<p>Muddy Forest, Gallery IN, Seoul</p>
+<p>The Echo that begins with A, KT&G Sang-sang madang, Chuncheon</p>
+<p class="cv-year">2021</p>
+<p>The Painters, Seoul Auction Gangnam Center, Seoul</p>
+<p>Cloud Shapes, ANOV gallery, Seoul</p>
+<p>Until we meet again, Artist run space Show And Tell, Seoul</p>
+<p class="cv-year">2020</p>
+<p>10 by 10, Culture Station Seoul 284 TMO gallery, Seoul</p>
+<p class="cv-year">2019</p>
+<p>Zero base v.2, Seoul Auction Gangnam Center, Seoul</p>
+<p class="cv-year">2018</p>
+<p>Consumer - Mat - Popcorn, Temporary space SENENE, Seoul</p>
+<p class="cv-year">2015</p>
+<p>Majoongmul artmarket, Kimreeaa Gallery, Seoul</p>
+<p>Sound Of Shout, Toy Republic, Seoul</p>
+<p>The Complete Mansion, Samwon Green Mansion, Seoul</p>
+
+<p class="cv-section">Artist's Book Project</p>
+<p class="cv-year">2023</p>
+<p>Double Bind, Pokettales, Seoul</p>
+<p class="cv-year">2019</p>
+<p>Taipei Art book Fair, Songshan Cultural and Creative Park, Taipei, Taiwan</p>
+<p class="cv-year">2018</p>
+<p>Twelve Library, Seodaemun Inn, Seoul</p>
+
+<p class="cv-section">Awards / Grants</p>
+<p class="cv-year">2025</p>
+<p>Arts Creation Support Program, Seoul Foundation for Arts and Culture</p>
+<p class="cv-year">2024</p>
+<p>Arts Creation Support Program, Seoul Foundation for Arts and Culture</p>
+<p class="cv-year">2021</p>
+<p>Arts Creation Support Program, Seoul Foundation for Arts and Culture</p>
+`;
+
+const contactHTML = `
+<p>email: brief.vom.mond@gmail.com</p>
+<p>instagram: @desvollmondes</p>
+`;
+
+// ── DOM REFS ───────────────────────────────────────────────────────────
+const menuToggle   = document.getElementById('menuToggle');
+const menuCloseBtn = document.getElementById('menuCloseBtn');
+const menuPanel    = document.getElementById('menuPanel');
+const menuDivider  = document.getElementById('menuDivider');
+const layout       = document.getElementById('layout');
+const rightPanel   = document.getElementById('rightPanel');
+const rightCover   = document.getElementById('rightCover');
+const projectImgs  = document.getElementById('projectImages');
+const textContent  = document.getElementById('textContent');
+const langBtn      = document.getElementById('langBtn');
+
+let menuOpen = false;
+let currentState = null;
+
+// ── 메뉴 아이템 재귀 빌드 ─────────────────────────────────────────────
+function buildItems(container, items, usePrefix = false) {
+  items.forEach(item => {
+    if (item.t === 'cat') {
+      const el = document.createElement('div');
+      el.className = 'cat-label';
+      el.textContent = item.label;
+      container.appendChild(el);
+    } else if (item.t === 'show') {
+      const el = document.createElement('div');
+      el.className = 'acc-item';
+      el.dataset.imgKey = item.imgKey || '';
+      el.dataset.itemLabel = item.label;
+      el.dataset.itemId = item.id || '';
+      el.textContent = (usePrefix && !item.noPrefix) ? '- ' + item.label : item.label;
+      el.addEventListener('click', () => onShowClick(item, el));
+      container.appendChild(el);
+    } else if (item.t === 'acc') {
+      const wrap = document.createElement('div');
+      const header = document.createElement('div');
+      header.className = 'acc-header';
+      const isYear = /^\d{4}$/.test(item.label);
+      if (isYear) {
+        header.dataset.label = item.label;
+        header.dataset.arrow = '1';
+        header.textContent = '▶ ' + item.label;
+      } else {
+        header.textContent = item.label;
+      }
+      const body = document.createElement('div');
+      body.className = 'acc-body';
+      buildItems(body, item.items, isYear);
+      header.addEventListener('click', () => toggleAcc(body));
+      wrap.appendChild(header);
+      wrap.appendChild(body);
+      container.appendChild(wrap);
+    }
+  });
+}
+
+// ── 메뉴 빌드 ─────────────────────────────────────────────────────────
+menuStructure.forEach(node => {
+  if (node.t === 'sep') {
+    menuPanel.appendChild(Object.assign(document.createElement('hr'), { className: 'menu-sep' }));
+    return;
+  }
+  const wrap = document.createElement('div');
+  wrap.className = 'menu-inner';
+  if (node.t === 'nav') {
+    const el = document.createElement('div');
+    el.className = 'nav-item';
+    el.dataset.navKey = node.key;
+    el.textContent = node.label;
+    el.addEventListener('click', () => onNavClick(node.key, el));
+    wrap.appendChild(el);
+  } else if (node.t === 'acc') {
+    const header = document.createElement('div');
+    header.className = 'acc-header';
+    header.textContent = node.label;
+    const body = document.createElement('div');
+    body.className = 'acc-body';
+    buildItems(body, node.items, true);
+    header.addEventListener('click', () => toggleAcc(body));
+    wrap.appendChild(header);
+    wrap.appendChild(body);
+  }
+  menuPanel.appendChild(wrap);
+});
+
+// ── Works/Exhibitions + 연도 아코디언 초기 열기 ───────────────────────
+(function initOpenAccordions() {
+  menuPanel.querySelectorAll('.menu-inner > .acc-header').forEach(header => {
+    if (header.textContent.trim() === 'Works/Exhibitions') {
+      const body = header.nextElementSibling;
+      body.dataset.alwaysOpen = '1';
+      body.classList.add('open');
+      body.style.maxHeight = '9999px';
+    }
+  });
+})();
+
+// ── 아코디언 토글 (형제만 닫기) ──────────────────────────────────────
+function toggleAcc(body) {
+  if (body.dataset.alwaysOpen) return;
+  const isOpen = body.classList.contains('open');
+  const grandparent = body.parentElement?.parentElement;
+  if (grandparent) {
+    grandparent.querySelectorAll(':scope > * > .acc-body').forEach(b => {
+      if (b.dataset.alwaysOpen) return;
+      b.style.maxHeight = '0px';
+      b.classList.remove('open');
+      const h = b.previousElementSibling;
+      if (h && h.dataset.arrow) { h.textContent = '▶ ' + h.dataset.label; h.classList.remove('is-open'); }
+    });
+  }
+  if (!isOpen) {
+    body.classList.add('open');
+    body.style.maxHeight = '9999px';
+    const header = body.previousElementSibling;
+    if (header && header.dataset.arrow) { header.textContent = '▼ ' + header.dataset.label; header.classList.add('is-open'); }
+  }
+}
+
+function onNavClick(key, el) {
+  clearActive();
+  el.classList.add('active');
+  currentState = { type: 'nav', key };
+  updateLangHref();
+  layout.classList.add('project-open');
+  langBtn.classList.add('content-open');
+  menuToggle.classList.add('content-open');
+  rightCover.classList.add('hidden');
+  projectImgs.classList.remove('active');
+  projectImgs.innerHTML = '';
+
+  const html = key === 'cv' ? cvHTML : key === 'contact' ? contactHTML : '';
+  textContent.innerHTML = html;
+  textContent.classList.add('active');
+  rightPanel.scrollTop = 0;
+  if (window.innerWidth <= 768) closePanelOnly();
+}
+
+function onShowClick(item, el) {
+  clearActive();
+  el.classList.add('active');
+  currentState = { type: 'show', id: item.id || null, imgKey: item.imgKey || null, label: item.label };
+  updateLangHref();
+  layout.classList.add('project-open');
+  langBtn.classList.add('content-open');
+  menuToggle.classList.add('content-open');
+  rightCover.classList.add('hidden');
+  textContent.classList.remove('active');
+  textContent.innerHTML = '';
+
+  const imgs = item.imgKey ? (exhibitionImages[item.imgKey] || []) : [];
+  projectImgs.innerHTML = '';
+  imgs.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    projectImgs.appendChild(img);
+  });
+  projectImgs.classList.add('active');
+  rightPanel.scrollTop = 0;
+  if (window.innerWidth <= 768) closePanelOnly();
+}
+
+function clearActive() {
+  menuPanel.querySelectorAll('.nav-item, .acc-item').forEach(el => el.classList.remove('active'));
+}
+
+function returnToLanding() {
+  clearActive();
+  currentState = null;
+  updateLangHref();
+  langBtn.classList.remove('content-open');
+  menuToggle.classList.remove('content-open');
+  menuPanel.querySelectorAll('.acc-body').forEach(b => { b.style.maxHeight = '0px'; b.classList.remove('open'); });
+  layout.classList.remove('project-open');
+  projectImgs.classList.remove('active');
+  projectImgs.innerHTML = '';
+  textContent.classList.remove('active');
+  textContent.innerHTML = '';
+  rightCover.classList.remove('hidden');
+  rightPanel.scrollTop = 0;
+}
+
+function openMenu() {
+  menuOpen = true;
+  menuPanel.classList.add('open');
+  menuDivider.classList.add('visible');
+  menuToggle.classList.add('hidden');
+}
+
+function closeMenu() {
+  menuOpen = false;
+  menuPanel.classList.remove('open');
+  menuDivider.classList.remove('visible');
+  menuToggle.classList.remove('hidden');
+  returnToLanding();
+}
+
+function closePanelOnly() {
+  menuOpen = false;
+  menuPanel.classList.remove('open');
+  menuDivider.classList.remove('visible');
+  menuToggle.classList.remove('hidden');
+}
+
+function updateLangHref() {
+  if (!currentState) { langBtn.href = 'index.html'; return; }
+  const p = new URLSearchParams();
+  if (currentState.type === 'nav') {
+    p.set('view', currentState.key);
+  } else {
+    p.set('view', 'show');
+    if (currentState.id) p.set('id', currentState.id);
+    else if (currentState.imgKey) p.set('key', currentState.imgKey);
+    else p.set('label', currentState.label);
+  }
+  langBtn.href = 'index.html?' + p.toString();
+}
+
+function restoreStateFromURL() {
+  const p = new URLSearchParams(window.location.search);
+  const view = p.get('view');
+  if (!view) return;
+  openMenu();
+  if (view === 'cv' || view === 'contact') {
+    const el = menuPanel.querySelector(`[data-nav-key="${view}"]`);
+    if (el) onNavClick(view, el);
+  } else if (view === 'show') {
+    const id = p.get('id');
+    const key = p.get('key');
+    const label = p.get('label');
+    const el = id
+      ? menuPanel.querySelector(`[data-item-id="${id}"]`)
+      : key
+      ? menuPanel.querySelector(`[data-img-key="${key}"]`)
+      : [...menuPanel.querySelectorAll('.acc-item')].find(e => e.dataset.itemLabel === label);
+    if (el) {
+      let ancestor = el.closest('.acc-body');
+      while (ancestor) {
+        ancestor.classList.add('open');
+        ancestor.style.maxHeight = '9999px';
+        const h = ancestor.previousElementSibling;
+        if (h && h.dataset.arrow) { h.textContent = '▼ ' + h.dataset.label; h.classList.add('is-open'); }
+        ancestor = ancestor.parentElement?.closest('.acc-body');
+      }
+      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, label: el.dataset.itemLabel }, el);
+    }
+  }
+}
+
+menuToggle.addEventListener('click', openMenu);
+menuCloseBtn.addEventListener('click', closeMenu);
+restoreStateFromURL();
+</script>
+</body>
+</html>

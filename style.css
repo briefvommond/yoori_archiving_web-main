@@ -1,0 +1,353 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: default;
+  background: var(--bg, #faf9f6);
+}
+
+/* ── LAYOUT ───────────────────────────────────────── */
+.layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ── LEFT PANEL ───────────────────────────────────── */
+.left {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.left-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── MENU TOGGLE (메뉴 닫혔을 때만 보임) ────────────── */
+.menu-toggle {
+  position: fixed;
+  top: 12px;
+  left: 18px;
+  z-index: 100;
+  background: var(--bg, #faf9f6);
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 1;
+}
+
+.menu-toggle.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── 언어 전환 버튼 ───────────────────────────────── */
+.lang-btn {
+  position: fixed;
+  top: 12px;
+  right: 18px;
+  z-index: 100;
+  background: var(--bg, #faf9f6);
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.lang-btn.content-open,
+.menu-toggle.content-open {
+  background: #000;
+  color: var(--bg, #faf9f6);
+}
+
+/* ── MENU PANEL ───────────────────────────────────── */
+.menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 25vw;
+  background: var(--bg, #faf9f6);
+  z-index: 50;
+  overflow-y: auto;
+  transform: translateX(-100%);
+}
+
+.menu-panel.open {
+  transform: translateX(0);
+}
+
+/* ── 세로 구분선 (메뉴 | 오른쪽 콘텐츠) ─────────────── */
+.menu-divider {
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 25vw;
+  width: 1px;
+  background: #000;
+  z-index: 49;
+  pointer-events: none;
+  display: none;
+}
+
+.menu-divider.visible {
+  display: block;
+}
+
+/* ── 패널 상단 CLOSE 버튼 (패널 안에 위치) ──────────── */
+.menu-close-btn {
+  display: block;
+  width: fit-content;
+  margin: 12px 18px;
+  padding: 3px 5px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--bg, #faf9f6);
+  background: #000;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ── 구분선 ───────────────────────────────────────── */
+.menu-sep {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 0 18px;
+}
+
+/* ── 메뉴 내부 공통 패딩 ──────────────────────────── */
+.menu-inner {
+  padding: 0 26px;
+}
+
+/* ── 직접 탐색 항목 (C.V, Contact) ───────────────── */
+.nav-item {
+  padding: 8px 0;
+  cursor: pointer;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+  display: block;
+  width: fit-content;
+}
+
+.nav-item.active {
+  color: rgb(73, 98, 97);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── 섹션 레이블 (Works/Exhibitions) ─────────────── */
+.section-label {
+  padding: 8px 0;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+  display: block;
+}
+
+/* ── 아코디언 헤더 ────────────────────────────────── */
+.acc-header {
+  padding: 5px 0;
+}
+
+.menu-inner > .acc-header {
+  padding: 8px 0;
+  cursor: pointer;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+  display: block;
+  width: fit-content;
+}
+
+/* ── 아코디언 바디 ────────────────────────────────── */
+.acc-body {
+  overflow: hidden;
+  max-height: 0;
+  padding-bottom: 0;
+}
+
+.acc-header.is-open {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #000;
+}
+
+/* 연도 아코디언 내부: ▼ 너비만큼 들여쓰기 */
+.acc-body > div > .acc-body {
+  padding-left: 1.3em;
+}
+
+.acc-body.open {
+  padding-bottom: 5px;
+}
+
+/* ── 카테고리 레이블 ──────────────────────────────── */
+.cat-label {
+  padding: 5px 0;
+  line-height: 1;
+  color: #000;
+  user-select: none;
+  display: block;
+}
+
+/* ── 전시/항목 (클릭 가능) ────────────────────────── */
+.acc-item {
+  padding: 5px 0;
+  cursor: pointer;
+  line-height: 1.5;
+  white-space: pre-line;
+  color: #000;
+  user-select: none;
+  display: block;
+  width: fit-content;
+}
+
+.acc-item.active {
+  color: rgb(73, 98, 97);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── RIGHT PANEL ──────────────────────────────────── */
+.right {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: var(--bg, #faf9f6);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 프로젝트 열릴 때: 메뉴 1/4 + 콘텐츠 3/4 */
+.project-open .left  { width: 0; }
+.project-open .right { width: 75vw; margin-left: 25vw; }
+
+/* ── LANDING COVER ────────────────────────────────── */
+.right-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.right-cover.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── 프로젝트 이미지 ──────────────────────────────── */
+.project-images {
+  display: none;
+  padding: 10px;
+  background: var(--bg, #faf9f6);
+}
+
+.project-images.active { display: block; }
+
+.project-images img {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.project-images img:last-child { margin-bottom: 0; }
+
+/* ── 텍스트 콘텐츠 (C.V, Contact) ────────────────── */
+.text-content {
+  display: none;
+  padding: 28px 32px;
+  line-height: 1.5;
+  color: #000;
+  background: var(--bg, #faf9f6);
+  min-height: 100%;
+}
+
+.text-content.active { display: block; }
+
+.cv-name {
+  font-size: 12px;
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+}
+
+.cv-section {
+  margin-top: 28px;
+  margin-bottom: 6px;
+  letter-spacing: 0.06em;
+}
+
+.cv-year {
+  margin-top: 10px;
+  opacity: 0.55;
+}
+
+/* ── MOBILE ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+    height: 50%;
+    flex-shrink: 0;
+  }
+
+  .right {
+    width: 100%;
+    height: 50%;
+  }
+
+  .project-open .left  { width: 100%; height: 0; }
+  .project-open .right { width: 100%; height: 100%; margin-left: 0; }
+
+  .menu-panel {
+    width: 100vw;
+  }
+
+  .menu-divider {
+    display: none !important;
+  }
+
+  .text-content {
+    padding: 52px 32px 28px;
+  }
+
+  .project-images {
+    padding: 52px 10px 10px;
+  }
+}
