@@ -25,6 +25,7 @@
       <img class="right-cover" id="rightCover" src="" alt="">
       <div class="project-images" id="projectImages"></div>
       <div class="text-content" id="textContent"></div>
+      <div id="splitView" style="display:none; width:100%; height:100%;"></div>
     </div>
   </div>
 
@@ -88,7 +89,7 @@ const exhibitionImages = {
 // ── 메뉴 구조 데이터 (English) ─────────────────────────────────────────
 const menuStructure = [
   { t: 'sep' },
-  { t: 'nav', label: 'C.V', key: 'cv' },
+  { t: 'nav', label: 'CV', key: 'cv' },
   { t: 'sep' },
   { t: 'nav', label: 'Contact', key: 'contact' },
   { t: 'sep' },
@@ -121,7 +122,7 @@ const menuStructure = [
   {
     t: 'acc', label: 'Projects',
     items: [
-      { t: 'show', id: 'proj-1', label: 'Cover for 『Where No One Comes』 (Cheon Seon-ran, Hubble)' },
+      { t: 'show', id: 'proj-1', label: 'Cover for 『Where No One Comes』 (Cheon Seon-ran, Hubble)', splitImg: 'image/Projects/Where No One Comes.jpg', splitText: '『아무도 오지 않는 곳에서』' },
       { t: 'show', id: 'proj-2', label: 'Cover for 『It Lasts Forever and Then It\'s Over』 (Anne de Marcken, Hubble)' },
       { t: 'show', id: 'proj-3', label: 'Artwork and Album Design for Damons Year, 《HEADACHE.》' },
       { t: 'show', id: 'proj-4', label: 'Cover Artwork for Damons Year, <Cherry>' },
@@ -137,8 +138,8 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2026', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2026-1', label: "Bird's Gift: Borderline, Byeolgwan, Seoul" },
-          { t: 'show', id: 'exh-2026-2', label: "Microscopic Disaster, oaoa Gallery, Seoul" },
+          { t: 'show', id: 'exh-2026-1', label: 'Micro-disaster, oaoa gallery, Seoul' },
+          { t: 'show', id: 'exh-2026-2', label: 'The Present of Birds : Borderline, Outhouse, Seoul' },
         ],
       },
       {
@@ -146,10 +147,10 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2025', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2025-1', label: 'Shapeless Loop, Hakgojae Gallery, Seoul', imgKey: 'hakgojae' },
+          { t: 'show', id: 'exh-2025-1', label: 'Shapeless Loop, Hakgojae gallery, Seoul', imgKey: 'hakgojae' },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2025-2', label: 'Small Giants, Gu-haus, Yangpyeong' },
-          { t: 'show', id: 'exh-2025-3', label: 'OCTO-, Page Room 8 & Jiwooheon, Seoul' },
+          { t: 'show', id: 'exh-2025-2', label: 'Little Giants, Koohouse museum, Yangpyeing, Gyeonggi-do' },
+          { t: 'show', id: 'exh-2025-3', label: 'OCTO- , Pageroom8 & Jiwooheon, Seoul' },
         ],
       },
       {
@@ -157,11 +158,11 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2024', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2024-1', label: 'Days Without, Page Room 8, Seoul' },
+          { t: 'show', id: 'exh-2024-1', label: 'Non-existent Day, Pageroom8, Seoul' },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2024-2', label: 'Golden Arrow, This Is Not a Church, Seoul' },
-          { t: 'show', id: 'exh-2024-3', label: "The Messenger's Mysterious Bond, Daejeon Museum of Art Creation Center, Daejeon" },
-          { t: 'show', id: 'exh-2024-4', label: 'The Sea Holding a White Harpoon, Seoripul Youth Art Gallery, Seoul' },
+          { t: 'show', id: 'exh-2024-3', label: 'Mysterious Solidarities of Messengers, Daejeon Art Centre (Daejeon Museum of Art), Daejeon' },
+          { t: 'show', id: 'exh-2024-4', label: 'The Sea Seeping into the White Pebbles, Seoripul gallery, Seoul' },
         ],
       },
       {
@@ -169,11 +170,11 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2023-1', label: 'Loosely Embrace, Firmly Untangle, Gallery In HQ, Seoul' },
-          { t: 'show', id: 'exh-2023-2', label: 'Double Bind: Artist Book Project, Pocket Tales, Seoul' },
+          { t: 'show', id: 'exh-2023-1', label: "Bind Loosely & Loosen tightly, Gallery IN HQ, Seoul" },
+          { t: 'show', id: 'exh-2023-2', label: "Double Bind : Artist's book project, Pokettales, Seoul" },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity: Kim Seeun, Yoori Duo Exhibition, Hakgojae Gallery, Seoul' },
-          { t: 'show', id: 'exh-2023-4', label: 'OCTO-, Page Room 8, Seoul' },
+          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity, Hakgojae, Seoul' },
+          { t: 'show', id: 'exh-2023-4', label: 'OCTO- , Pageroom8, Seoul' },
         ],
       },
       {
@@ -182,11 +183,11 @@ const menuStructure = [
           { t: 'show', id: 'sel-2022', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2022-1', label: 'Local Christmas Market, The Untitled Void, Seoul' },
-          { t: 'show', id: 'exh-2022-2', label: 'From an Imperfect World to a Perfect Boundary: Shin Soeun, Yoori Duo Exhibition, Page Room 8, Seoul' },
-          { t: 'show', id: 'exh-2022-3', label: 'Hop, Hop, Hope, Gallery In HQ, Seoul' },
-          { t: 'show', id: 'exh-2022-4', label: 'Drawing Growing, Mihakwan, Seoul' },
-          { t: 'show', id: 'exh-2022-5', label: 'Muddy Forest: Kim Okjeong, Yoori Duo Exhibition, Gallery In, Seoul' },
-          { t: 'show', id: 'exh-2022-6', label: 'Resonance Starting from A, KT&G Sangsang Madang Chuncheon Art Gallery, Chuncheon' },
+          { t: 'show', id: 'exh-2022-2', label: 'From the Uncomplete World To the Complete Gyeonggye, Shadow Esquisse, Pageroom8, Seoul' },
+          { t: 'show', id: 'exh-2022-3', label: 'Hop, Hop, Hope, Gallery IN HQ, Seoul' },
+          { t: 'show', id: 'exh-2022-4', label: 'Drawing Growing, Mihakgwan, Seoul' },
+          { t: 'show', id: 'exh-2022-5', label: 'Muddy Forest, Gallery IN, Seoul' },
+          { t: 'show', id: 'exh-2022-6', label: 'The Echo that begins with A, KT&G Sang-sang madang, Chuncheon' },
         ],
       },
       {
@@ -194,11 +195,11 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2021', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2021-1', label: 'And So the Embrace Could Not Become a Sentence, Byeolgwan, Seoul' },
+          { t: 'show', id: 'exh-2021-1', label: "Hugged tight but couldn't reach each other, Outhouse, Seoul" },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2021-2', label: 'The Painters, Seoul Auction Gangnam Center, Seoul' },
-          { t: 'show', id: 'exh-2021-3', label: 'Cloud Shape: Yoori, Lee Seoyoon Duo Exhibition, Gallery Anobu, Seoul' },
-          { t: 'show', id: 'exh-2021-4', label: 'Until We Meet Again, Artist-Run Space Show and Tell, Seoul' },
+          { t: 'show', id: 'exh-2021-3', label: 'Cloud Shapes, ANOV gallery, Seoul' },
+          { t: 'show', id: 'exh-2021-4', label: 'Until we meet again, Artist run space Show And Tell, Seoul' },
         ],
       },
       {
@@ -206,7 +207,7 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2020', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2020-1', label: '10 to the Power of n, Culture Station Seoul 284, Seoul' },
+          { t: 'show', id: 'exh-2020-1', label: '10 by 10, Culture Station Seoul 284 TMO gallery, Seoul' },
         ],
       },
       {
@@ -214,8 +215,8 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2019', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2019-1', label: 'Zerobase: v2, Seoul Auction Gangnam Center, Seoul' },
-          { t: 'show', id: 'exh-2019-2', label: 'Taipei Artbook Fair, Songshan Cultural Park, Taipei, Taiwan' },
+          { t: 'show', id: 'exh-2019-1', label: 'Zero base v.2, Seoul Auction Gangnam Center, Seoul' },
+          { t: 'show', id: 'exh-2019-2', label: 'Taipei Art book Fair, Songshan Cultural and Creative Park, Taipei, Taiwan' },
         ],
       },
       {
@@ -336,7 +337,7 @@ const cvHTML = `
 
 const contactHTML = `
 <p>email: brief.vom.mond@gmail.com</p>
-<p>instagram: @desvollmondes</p>
+<p>instagram: <a href="https://www.instagram.com/desvollmondes" target="_blank" style="color:inherit;text-decoration:none;">@desvollmondes</a></p>
 `;
 
 // ── DOM REFS ───────────────────────────────────────────────────────────
@@ -349,6 +350,7 @@ const rightPanel   = document.getElementById('rightPanel');
 const rightCover   = document.getElementById('rightCover');
 const projectImgs  = document.getElementById('projectImages');
 const textContent  = document.getElementById('textContent');
+const splitView    = document.getElementById('splitView');
 const langBtn      = document.getElementById('langBtn');
 
 let menuOpen = false;
@@ -369,6 +371,8 @@ function buildItems(container, items, usePrefix = false) {
       el.dataset.itemLabel = item.label;
       el.dataset.itemId = item.id || '';
       el.dataset.itemTextKey = item.textKey || '';
+      el.dataset.itemSplitImg = item.splitImg || '';
+      el.dataset.itemSplitText = item.splitText || '';
       el.textContent = (usePrefix && !item.noPrefix) ? '- ' + item.label : item.label;
       el.addEventListener('click', () => onShowClick(item, el));
       container.appendChild(el);
@@ -487,7 +491,30 @@ function onShowClick(item, el) {
   menuToggle.classList.add('content-open');
   rightCover.classList.add('hidden');
 
-  if (item.textKey) {
+  if (item.splitImg) {
+    projectImgs.classList.remove('active');
+    projectImgs.innerHTML = '';
+    textContent.classList.remove('active');
+    textContent.innerHTML = '';
+    const wrap = document.createElement('div');
+    wrap.className = 'split-view';
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'split-view-img';
+    const img = document.createElement('img');
+    img.src = item.splitImg;
+    img.alt = '';
+    imgWrap.appendChild(img);
+    const textWrap = document.createElement('div');
+    textWrap.className = 'split-view-text';
+    textWrap.textContent = item.splitText || '';
+    wrap.appendChild(imgWrap);
+    wrap.appendChild(textWrap);
+    splitView.innerHTML = '';
+    splitView.appendChild(wrap);
+    splitView.style.display = 'block';
+  } else if (item.textKey) {
+    splitView.style.display = 'none';
+    splitView.innerHTML = '';
     projectImgs.classList.remove('active');
     projectImgs.innerHTML = '';
     const pre = document.createElement('pre');
@@ -497,6 +524,8 @@ function onShowClick(item, el) {
     textContent.appendChild(pre);
     textContent.classList.add('active');
   } else {
+    splitView.style.display = 'none';
+    splitView.innerHTML = '';
     textContent.classList.remove('active');
     textContent.innerHTML = '';
     const imgs = item.imgKey ? (exhibitionImages[item.imgKey] || []) : [];
@@ -529,6 +558,8 @@ function returnToLanding() {
   projectImgs.innerHTML = '';
   textContent.classList.remove('active');
   textContent.innerHTML = '';
+  splitView.style.display = 'none';
+  splitView.innerHTML = '';
   rightCover.classList.remove('hidden');
   rightPanel.scrollTop = 0;
 }
@@ -595,7 +626,7 @@ function restoreStateFromURL() {
         if (h && h.dataset.arrow) { h.textContent = '▼ ' + h.dataset.label; h.classList.add('is-open'); }
         ancestor = ancestor.parentElement?.closest('.acc-body');
       }
-      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, label: el.dataset.itemLabel }, el);
+      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, splitImg: el.dataset.itemSplitImg || null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
     }
   }
 }

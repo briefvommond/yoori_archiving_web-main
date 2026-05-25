@@ -27,6 +27,7 @@
       <img class="right-cover" id="rightCover" src="" alt="">
       <div class="project-images" id="projectImages"></div>
       <div class="text-content" id="textContent"></div>
+      <div id="splitView" style="display:none; width:100%; height:100%;"></div>
     </div>
   </div>
 
@@ -93,7 +94,7 @@ const exhibitionImages = {
 // ── 메뉴 구조 데이터 ───────────────────────────────────────────────────
 const menuStructure = [
   { t: 'sep' },
-  { t: 'nav', label: 'C.V', key: 'cv' },
+  { t: 'nav', label: 'CV', key: 'cv' },
   { t: 'sep' },
   { t: 'nav', label: 'Contact', key: 'contact' },
   { t: 'sep' },
@@ -126,7 +127,7 @@ const menuStructure = [
   {
     t: 'acc', label: 'Projects',
     items: [
-      { t: 'show', id: 'proj-1', label: '『아무도 오지 않는 곳에서』(천선란, 허블 출판사) 커버' },
+      { t: 'show', id: 'proj-1', label: '『아무도 오지 않는 곳에서』(천선란, 허블 출판사) 커버', splitImg: 'image/Projects/Where No One Comes.jpg', splitText: '『아무도 오지 않는 곳에서』' },
       { t: 'show', id: 'proj-2', label: '『영원히 계속되다가 끝이 난다』(앤 드 마르켄, 허블 출판사) 커버' },
       { t: 'show', id: 'proj-3', label: 'Damons Year, 《HEADACHE.》 아트워크 및 앨범 디자인' },
       { t: 'show', id: 'proj-4', label: 'Damons Year, <Cherry> 커버 아트워크' },
@@ -348,7 +349,7 @@ const cvHTML = `
 
 const contactHTML = `
 <p>email: brief.vom.mond@gmail.com</p>
-<p>instagram: @desvollmondes</p>
+<p>instagram: <a href="https://www.instagram.com/desvollmondes" target="_blank" style="color:inherit;text-decoration:none;">@desvollmondes</a></p>
 `;
 
 // ── DOM REFS ───────────────────────────────────────────────────────────
@@ -361,6 +362,7 @@ const rightPanel   = document.getElementById('rightPanel');
 const rightCover   = document.getElementById('rightCover');
 const projectImgs  = document.getElementById('projectImages');
 const textContent  = document.getElementById('textContent');
+const splitView    = document.getElementById('splitView');
 const langBtn      = document.getElementById('langBtn');
 
 let menuOpen = false;
@@ -381,6 +383,8 @@ function buildItems(container, items, usePrefix = false) {
       el.dataset.itemLabel = item.label;
       el.dataset.itemId = item.id || '';
       el.dataset.itemTextKey = item.textKey || '';
+      el.dataset.itemSplitImg = item.splitImg || '';
+      el.dataset.itemSplitText = item.splitText || '';
       el.textContent = (usePrefix && !item.noPrefix) ? '- ' + item.label : item.label;
       el.addEventListener('click', () => onShowClick(item, el));
       container.appendChild(el);
@@ -501,7 +505,30 @@ function onShowClick(item, el) {
   menuToggle.classList.add('content-open');
   rightCover.classList.add('hidden');
 
-  if (item.textKey) {
+  if (item.splitImg) {
+    projectImgs.classList.remove('active');
+    projectImgs.innerHTML = '';
+    textContent.classList.remove('active');
+    textContent.innerHTML = '';
+    const wrap = document.createElement('div');
+    wrap.className = 'split-view';
+    const imgWrap = document.createElement('div');
+    imgWrap.className = 'split-view-img';
+    const img = document.createElement('img');
+    img.src = item.splitImg;
+    img.alt = '';
+    imgWrap.appendChild(img);
+    const textWrap = document.createElement('div');
+    textWrap.className = 'split-view-text';
+    textWrap.textContent = item.splitText || '';
+    wrap.appendChild(imgWrap);
+    wrap.appendChild(textWrap);
+    splitView.innerHTML = '';
+    splitView.appendChild(wrap);
+    splitView.style.display = 'block';
+  } else if (item.textKey) {
+    splitView.style.display = 'none';
+    splitView.innerHTML = '';
     projectImgs.classList.remove('active');
     projectImgs.innerHTML = '';
     const pre = document.createElement('pre');
@@ -511,6 +538,8 @@ function onShowClick(item, el) {
     textContent.appendChild(pre);
     textContent.classList.add('active');
   } else {
+    splitView.style.display = 'none';
+    splitView.innerHTML = '';
     textContent.classList.remove('active');
     textContent.innerHTML = '';
     const imgs = item.imgKey ? (exhibitionImages[item.imgKey] || []) : [];
@@ -546,6 +575,8 @@ function returnToLanding() {
   projectImgs.innerHTML = '';
   textContent.classList.remove('active');
   textContent.innerHTML = '';
+  splitView.style.display = 'none';
+  splitView.innerHTML = '';
   rightCover.classList.remove('hidden');
   rightPanel.scrollTop = 0;
 }
@@ -613,7 +644,7 @@ function restoreStateFromURL() {
         if (h && h.dataset.arrow) { h.textContent = '▼ ' + h.dataset.label; h.classList.add('is-open'); }
         ancestor = ancestor.parentElement?.closest('.acc-body');
       }
-      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, label: el.dataset.itemLabel }, el);
+      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, splitImg: el.dataset.itemSplitImg || null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
     }
   }
 }
