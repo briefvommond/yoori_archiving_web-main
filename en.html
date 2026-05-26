@@ -122,8 +122,8 @@ const menuStructure = [
   {
     t: 'acc', label: 'Projects',
     items: [
-      { t: 'show', id: 'proj-1', label: 'Cover for 『Where No One Comes』 (Cheon Seon-ran, Hubble)', splitImg: 'image/Projects/Where No One Comes.jpg', splitText: '『Where No One Comes』\n  Cheon Seon-ran\n  Hubble' },
-      { t: 'show', id: 'proj-2', label: 'Cover for 『It Lasts Forever and Then It\'s Over』 (Anne de Marcken, Hubble)', splitImg: 'image/Projects/anne.jpeg', splitText: '『It Lasts Forever and Then It\'s Over』\n  Anne de Marcken\n  Hubble' },
+      { t: 'show', id: 'proj-1', label: 'Cover for 『Where No One Comes』 (Cheon Seon-ran, Hubble)', splitItems: [{ img: 'image/Projects/Where No One Comes.jpg', text: '『Where No One Comes』\n  Cheon Seon-ran\n  Hubble' }, { img: 'image/Projects/where no one comes_image.jpg', text: '<With a Falling Heart>\n2022\noil on wood panel\n116.8x91cm' }] },
+      { t: 'show', id: 'proj-2', label: 'Cover for 『It Lasts Forever and Then It\'s Over』 (Anne de Marcken, Hubble)', splitItems: [{ img: 'image/Projects/anne.jpeg', text: '『It Lasts Forever and Then It\'s Over』\n  Anne de Marcken\n  Hubble' }, { img: 'image/Projects/anne_image.jpg', text: '<Simulated Flight>\n2023\noil on canvas\n53 x 45.5 cm' }] },
       { t: 'show', id: 'proj-3', label: 'Artwork and Album Design for Damons Year, 《HEADACHE.》' },
       { t: 'show', id: 'proj-4', label: 'Cover Artwork for Damons Year, <Cherry>' },
       { t: 'show', id: 'proj-5', label: 'Cover Artwork for Damons Year, <Rainbow>' },
@@ -415,6 +415,8 @@ function buildItems(container, items, usePrefix = false) {
       el.dataset.itemTextKey = item.textKey || '';
       el.dataset.itemTextImgPath = item.textImgPath || '';
       el.dataset.itemSplitImg = item.splitImg || '';
+      el.dataset.itemSplitImgs = item.splitImgs ? JSON.stringify(item.splitImgs) : '';
+      el.dataset.itemSplitItems = item.splitItems ? JSON.stringify(item.splitItems) : '';
       el.dataset.itemSplitText = item.splitText || '';
       el.textContent = (usePrefix && !item.noPrefix) ? '- ' + item.label : item.label;
       el.addEventListener('click', () => onShowClick(item, el));
@@ -534,24 +536,30 @@ function onShowClick(item, el) {
   menuToggle.classList.add('content-open');
   rightCover.classList.add('hidden');
 
-  if (item.splitImg) {
+  if (item.splitItems || item.splitImg || item.splitImgs) {
     projectImgs.classList.remove('active');
     projectImgs.innerHTML = '';
     textContent.classList.remove('active');
     textContent.innerHTML = '';
     const wrap = document.createElement('div');
     wrap.className = 'split-view';
-    const imgWrap = document.createElement('div');
-    imgWrap.className = 'split-view-img';
-    const img = document.createElement('img');
-    img.src = item.splitImg;
-    img.alt = '';
-    imgWrap.appendChild(img);
-    const textWrap = document.createElement('div');
-    textWrap.className = 'split-view-text';
-    textWrap.textContent = item.splitText || '';
-    wrap.appendChild(imgWrap);
-    wrap.appendChild(textWrap);
+    const items = item.splitItems || (item.splitImgs || [item.splitImg]).map((src, i) => ({ img: src, text: i === 0 ? (item.splitText || '') : '' }));
+    items.forEach(si => {
+      const row = document.createElement('div');
+      row.className = 'split-row';
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'split-view-img';
+      const img = document.createElement('img');
+      img.src = si.img;
+      img.alt = '';
+      imgWrap.appendChild(img);
+      const textWrap = document.createElement('div');
+      textWrap.className = 'split-view-text';
+      textWrap.textContent = si.text || '';
+      row.appendChild(imgWrap);
+      row.appendChild(textWrap);
+      wrap.appendChild(row);
+    });
     splitView.innerHTML = '';
     splitView.appendChild(wrap);
     splitView.style.display = 'block';
@@ -676,7 +684,7 @@ function restoreStateFromURL() {
         if (h && h.dataset.arrow) { h.textContent = '▼ ' + h.dataset.label; h.classList.add('is-open'); }
         ancestor = ancestor.parentElement?.closest('.acc-body');
       }
-      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, textImgPath: el.dataset.itemTextImgPath || null, splitImg: el.dataset.itemSplitImg || null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
+      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, textImgPath: el.dataset.itemTextImgPath || null, splitImg: el.dataset.itemSplitImg || null, splitImgs: el.dataset.itemSplitImgs ? JSON.parse(el.dataset.itemSplitImgs) : null, splitItems: el.dataset.itemSplitItems ? JSON.parse(el.dataset.itemSplitItems) : null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
     }
   }
 }
