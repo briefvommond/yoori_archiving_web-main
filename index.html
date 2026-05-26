@@ -103,7 +103,7 @@ const menuStructure = [
     items: [
       { t: 'show', id: 'text-1',  label: '《투명한 고리》 전시 서문 『우리의 안녕(安寧)을 위한, 투명한 고리(Shapeless Loop)』, 한주옥', textKey: 'shapeless-loop-essay' },
       { t: 'show', id: 'text-2',  label: '《투명한 고리》 전시 리뷰 『여기, 우리가 만나는 곳』, 김해서' },
-      { t: 'show', id: 'text-3',  label: '세계일보 문화기획 칼럼 『끝 이후의 시간을 위하여 – 사라진 존재들을 다정히 불러내기』, 신리사' },
+      { t: 'show', id: 'text-3',  label: '세계일보 문화기획 칼럼 『끝 이후의 시간을 위하여 – 사라진 존재들을 다정히 불러내기』, 신리사', textKey: 'segye-essay-ko', textImgPath: 'texts/segye.JPG' },
       { t: 'show', id: 'text-4',  label: '월간미술 2026년 1월호 [에디터스 픽]' },
       { t: 'show', id: 'text-5',  label: '월간미술 2025년 8월호 [아티스트북 특집] 작가의 글 『읽을 수 없는 문장들을 엮어내는 일』, 유리' },
       { t: 'show', id: 'text-6',  label: '아트인컬처 2025년 1월호 [FOCUS] 『젊은 예술, 별을 쏘다』' },
@@ -127,8 +127,8 @@ const menuStructure = [
   {
     t: 'acc', label: 'Projects',
     items: [
-      { t: 'show', id: 'proj-1', label: '『아무도 오지 않는 곳에서』(천선란, 허블 출판사) 커버', splitImg: 'image/Projects/Where No One Comes.jpg', splitText: '『아무도 오지 않는 곳에서』' },
-      { t: 'show', id: 'proj-2', label: '『영원히 계속되다가 끝이 난다』(앤 드 마르켄, 허블 출판사) 커버' },
+      { t: 'show', id: 'proj-1', label: '『아무도 오지 않는 곳에서』(천선란, 허블 출판사) 커버', splitImg: 'image/Projects/Where No One Comes.jpg', splitText: '『아무도 오지 않는 곳에서』\n  천선란\n  허블 출판사' },
+      { t: 'show', id: 'proj-2', label: '『영원히 계속되다가 끝이 난다』(앤 드 마르켄, 허블 출판사) 커버', splitImg: 'image/Projects/anne.jpeg', splitText: '『영원히 계속되다가 끝이 난다』\n  앤 드 마르켄\n  허블 출판사' },
       { t: 'show', id: 'proj-3', label: 'Damons Year, 《HEADACHE.》 아트워크 및 앨범 디자인' },
       { t: 'show', id: 'proj-4', label: 'Damons Year, <Cherry> 커버 아트워크' },
       { t: 'show', id: 'proj-5', label: 'Damons Year, <Rainbow> 커버 아트워크' },
@@ -274,6 +274,43 @@ const textsContent = {
 
 ¹ 유리, 「읽을 수 없는 문장들을 엮어내는 일」, 월간미술, 2025 8월호, p.80, 인용.
 `,
+  'segye-essay-ko': `세계일보 문화기획 칼럼
+
+
+
+끝 이후의 시간을 위하여 – 사라진 존재들을 다정히 불러내기
+
+신리사 (미술사ㅣ학고재 기획팀장)
+
+
+
+검푸른 웅덩이와 푸른 물줄기 속에서 솟아오른 검은 선과 덩어리들. 시각예술가 유리(b. 1994)는 마음 안에서 증발하지 못하고 고여 있는, 이름 붙여지지 않은 감정과 심상을 이미지로 길어 올리는 작업을 지속해 왔다. 학고재에서 진행되고 있는 개인전 《투명한 고리》(11/19-12/20)는 개인적인 서사에서 출발한다. 한 해 동안 가까운 존재들의 죽음을 세 번 연달아 마주한 뒤, 작가는 존재와 실재성에 대한 관심을 삶과 죽음이라는 구체적 주제와 함께 사유하게 되었다. 특히 할아버지의 기일이 되어버린 생일, 장례식장에서 생일 축하를 받았던 경험은 장례식장의 초와 생일 케이크 위의 초가 서로 닮아 있는 것처럼 탄생과 죽음이 분리된 사건이 아니라는 인식으로 이어졌다. 이번 전시는 바로 그 지점ㅡ끝과 시작, 존재와 부재의 경계ㅡ를 들여다보는 응시에서 비롯된다.
+
+<끝난 자리에서>
+전시는 회화, 조각, 설치 50여 점으로 구성되는데, 대부분 검고 희며 때때로 검푸른 색채가 떠오른다. 이곳에서 유리가 붙잡아둔 것들은 더 이상 볼 수 없는 존재들이 남기고 간 작고 미세한 잔해들이다. 그는 그것들을 감추거나 미화하지 않고 정직하게 드러내기를 택한다.
+
+전시와 동명의 회화 <투명한 고리>에서는 죽은 고양이의 형상과 다시 만날 날을 기다리며 다리에 묶어놓은 붉은 실이 등장한다. 레진과 나무를 엮어 만든 조각에서는 같은 실이 즉각적인 물성으로 되살아난다. 작품은 기억이나 회상에 기댄 이미지가 아닌, 사라진 뒤에도 남아 있는 것들의 현전성에서 출발한다. 화면에 깊숙이 스며든 검은 자국, 물기가 걷힌 매트한 질감, 거칠게 휘날리는 선은 요동치던 감정이 지나가고 난 뒤 남아있는 영원의 잔광처럼 남아있다.
+
+외할머니의 목걸이에서 나온 구슬을 레진으로 봉입한 <잔존하는 것들을 뭉쳐 만든 슬픔>에서도 사라진 존재들이 어딘가에서 계속 어떤 형태로든 남아있기를 바라는 마음이 담겨 있다. 투명한 덩어리 속에서 떠오르는 작은 구슬은 영원의 결정(結晶)으로 변모하여 '죽음 이후의 시간'을 위한 사물로 빚어진다. 유품을 그대로 보존할지, 작품화할지 망설이던 마음은 다음 차원을 향한 초월의 의지가 우위를 점하며 거두어졌다. "무언가 해야만 했어서"라는 작가의 말은 슬픔과 애도의 시간을 지나 나아가겠다는 결의에 가깝다.
+
+<움직이는 세계>
+유리는 존재와 부재, 삶과 죽음을 잇는 연결고리를 추상적 개념이 아닌 구체적 사물과 장면, 촉각적 경험을 통해 드러낸다. 시작과 끝이 없는 검은 고리, 부피와 리본을 만들고 하늘로 솟아오르는 검은 실, 날개를 닮은 하얀 고리 등이 작품 곳곳에 등장한다.
+
+<끊임없이 차오르고 계속해서 비워지는 것들>에서는 연결과 순환의 구조가 분수의 형태로 제시된다. 솟구치다 떨어지고 다시 채워지는 분수의 움직임은 존재와 부재가 교차하는 생의 거대한 흐름을 시각화한다. 이는 거대한 수레바퀴 속에서 채워지고 비워지는 삶의 경험, 즉 마음의 운동이기도 하다. 두 눈과 같은 형상을 지녀 사람을 닮은 이 분수는 쏟아지는 감정을 그대로 분출해 내면서도 어딘가 초연한 모습이다. 차오르는 것은 비워지고, 비어 있는 것은 필히 채워질 것을 알고 있기 때문에.
+
+끝이 끝이 아니라는 믿음, 투명한 연결 고리에 대한 관심은 달과 바다의 관계로도 은유된다. 물리적으로 결코 닿을 수 없을 만큼 멀리 있지만, 달의 중력이 바다를 끌어당기기에 바다는 끊임없이 움직임을 이어간다. <달과 바다의 사이>에서는 검푸른 파도와 희미한 달빛이 서로의 경계를 지우며 맞닿아 있다. 작가는 영원히 만나지 못하는 둘을 집을 닮은 공간 안에 함께 둔다. 멀리 떨어져 있지만 강하게 연결된 두 존재처럼, 작가는 이별 이후에도 지속되는 관계와 보이지 않지만 강력하게 작동하는 것들을 담아낸다.
+
+<끝을 딛고 태어난 조각들>
+<긴 꼬리 책>에는 연결에 대한 사유와 전환에 대한 의지가 작업 방식으로 드러난다. 작가는 본래 7m 길이에 달하는 그림을 아코디언처럼 접으며, 기존의 장면들이 우연한 방식으로 이어지고 새로운 조합을 만들어내는 모습을 목격했다. 읽을 수 없는 문장처럼 불쑥 튀어나온 이미지들은 또 다른 언어와 의미를 낳았고, 작가는 그 장면들을 독립된 작은 그림들로 분리해 <긴 꼬리 책 : 떨어져 나온 문장>이라는 제목의 연작으로 확장했다. 그리고 그 그림들을 다시 미니어처로 축소하고 연결하여 하나의 '꼬리'와 같은 모양으로 탄생시켰다.
+
+원본을 책처럼 접어내는 행위는 해체를 위한 행위라기보다, 새로운 가능성을 탐색하는 일에 가깝다. 조각난 화면들은 본래의 기능을 상실하지만, 작가는 그 단절을 새로운 시작의 출발점으로 삼는다. 남겨진 것(원본 그림)을 온전히 보존하는 대신 파편화하고 재구성함으로써 '남아 있는 것들'의 무게를 새롭게 발화하는 것이다. 그렇게 '꼬리에 꼬리를 물고' 태어난 작품은 '끝'을 딛고 살아나, 어딘가 그로테스크하지만 검게 빛나는 짐승처럼 새로운 존재로 태어난다.
+
+<남은 것들을 위한 시>
+남겨진 것들을 응시하고 다시 빛을 얻게 하는 유리의 세계에서, 의미 없는 것은 없고 끝은 끝이 아니게 된다. 슬픔과 그리움처럼 무겁게 침잠하던 감정들은 하얀 날개와 투명한 영원의 고리를 타고 가볍게 다음 차원으로 비상한다.
+
+이번 전시는 상실과 애도에서 출발하지만, 그 너머를 향해 나아가려는 의지와 영원에 대한 염원이 분명히 자리한다. 더 이상 볼 수 없는 존재들이 어떻게든 삶을 이어 나가길 바라는 간절함, 사랑하는 이들과 물리적 제약을 넘어 영원히 연결되고자 하는 바람. 지극히 사적인 이야기임에도 불구하고 우리가 유리의 예술에 공감하게 되는 이유는, 그가 결국 모두가 공유하는 상실의 두려움과 그것을 견디고 나아가려는 인간의 보편적 정서를 어루만지기 때문일 것이다. 삶에서 비롯되어 다시 삶으로 이어지는 유리의 예술 속에서, 우리는 두려움과 슬픔을 정직하게 마주하고 동시에 극복의 가능성을 함께 감지한다.
+
+남겨진 조각들을 응시하며 상실 이후의 시간을 위해 조용히 시(詩)를 쌓아 올리는 일. 감정의 마지막 날, 슬픔이 가라앉고 진실이 떠오르는 깊은 적막 속에서, 유리는 이름 없이 남겨진 감정들과 사라진 존재들을 다정히 불러낸다.`,
 };
 
 // ── 텍스트 콘텐츠 ──────────────────────────────────────────────────────
@@ -383,6 +420,7 @@ function buildItems(container, items, usePrefix = false) {
       el.dataset.itemLabel = item.label;
       el.dataset.itemId = item.id || '';
       el.dataset.itemTextKey = item.textKey || '';
+      el.dataset.itemTextImgPath = item.textImgPath || '';
       el.dataset.itemSplitImg = item.splitImg || '';
       el.dataset.itemSplitText = item.splitText || '';
       el.textContent = (usePrefix && !item.noPrefix) ? '- ' + item.label : item.label;
@@ -536,6 +574,13 @@ function onShowClick(item, el) {
     pre.textContent = textsContent[item.textKey] || '';
     textContent.innerHTML = '';
     textContent.appendChild(pre);
+    if (item.textImgPath) {
+      const img = document.createElement('img');
+      img.src = item.textImgPath;
+      img.alt = '';
+      img.style.cssText = 'display:block;width:100%;margin-top:28px;';
+      textContent.appendChild(img);
+    }
     textContent.classList.add('active');
   } else {
     splitView.style.display = 'none';
@@ -644,7 +689,7 @@ function restoreStateFromURL() {
         if (h && h.dataset.arrow) { h.textContent = '▼ ' + h.dataset.label; h.classList.add('is-open'); }
         ancestor = ancestor.parentElement?.closest('.acc-body');
       }
-      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, splitImg: el.dataset.itemSplitImg || null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
+      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, textImgPath: el.dataset.itemTextImgPath || null, splitImg: el.dataset.itemSplitImg || null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
     }
   }
 }

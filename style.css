@@ -272,7 +272,7 @@ html, body {
 /* ── 프로젝트 이미지 ──────────────────────────────── */
 .project-images {
   display: none;
-  padding: 10px;
+  padding: 10px 10px 50vh;
   background: var(--bg, #faf9f6);
 }
 
@@ -289,7 +289,7 @@ html, body {
 /* ── 텍스트 콘텐츠 (C.V, Contact) ────────────────── */
 .text-content {
   display: none;
-  padding: 28px 32px;
+  padding: 28px 32px 50vh;
   line-height: 1.5;
   color: #000;
   background: var(--bg, #faf9f6);
@@ -321,26 +321,27 @@ html, body {
 .split-view {
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 50vh;
 }
 
 .split-view-img {
   flex: 2;
-  overflow: hidden;
 }
 
 .split-view-img img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
 .split-view-text {
   flex: 1;
-  padding: 28px 24px;
+  padding: 28px 24px 50vh;
   line-height: 1.5;
   color: #000;
+  white-space: pre-line;
+  text-align: left;
 }
 
 /* ── MOBILE ───────────────────────────────────────── */
@@ -372,10 +373,25 @@ html, body {
   }
 
   .text-content {
-    padding: 52px 32px 28px;
+    padding: 52px 32px 50vh;
   }
 
   .project-images {
-    padding: 52px 10px 10px;
+    padding: 52px 10px 50vh;
+  }
+
+  .split-view {
+    flex-direction: column;
+  }
+
+  .split-view-img {
+    flex: none;
+    width: 100%;
+  }
+
+  .split-view-text {
+    flex: none;
+    width: 100%;
+    padding: 20px 24px 50vh;
   }
 }
