@@ -61,6 +61,20 @@ const exhibitionImages = {
   selectedWorks: [
     'image/exhibition-hakgojae/hakgojae10.jpg',
   ],
+  pageroom: [
+    'image/exhibitions/2024/pageroom/2024_0215 (2).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (5).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (8).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (12).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (13).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (14).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (15).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (16).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (18).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (19).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (24).jpg',
+    'image/exhibitions/2024/pageroom/2024_0215 (26).jpg',
+  ],
   hakgojae: [
     'image/exhibition-hakgojae/hakgojae1.jpg',
     'image/exhibition-hakgojae/hakgojae2.jpg',
@@ -117,6 +131,46 @@ const exhibitionImages = {
     'image/exhibitions/2025/hakgojae/image18.jpg',
     'image/exhibitions/2025/hakgojae/image19.jpg',
     'image/exhibitions/2025/hakgojae/image20.jpg',
+  ],
+  in2023: [
+    'image/exhibitions/2023/in/image1.jpg',
+    'image/exhibitions/2023/in/image2.jpg',
+    'image/exhibitions/2023/in/image3.jpg',
+    'image/exhibitions/2023/in/image4.jpg',
+    'image/exhibitions/2023/in/image5.jpg',
+    'image/exhibitions/2023/in/image6.jpg',
+    'image/exhibitions/2023/in/image7.jpg',
+    'image/exhibitions/2023/in/image8.jpg',
+    'image/exhibitions/2023/in/image9.jpg',
+    'image/exhibitions/2023/in/image10.jpg',
+    'image/exhibitions/2023/in/image11.jpg',
+    'image/exhibitions/2023/in/image12.jpg',
+    'image/exhibitions/2023/in/image13.jpg',
+  ],
+  pokettales2023: [
+    'image/exhibitions/2023/pokettales/image1.jpg',
+    'image/exhibitions/2023/pokettales/image2.jpg',
+    'image/exhibitions/2023/pokettales/image3.jpg',
+    'image/exhibitions/2023/pokettales/image4.jpg',
+    'image/exhibitions/2023/pokettales/image5.jpg',
+    'image/exhibitions/2023/pokettales/image6.jpg',
+    'image/exhibitions/2023/pokettales/image7.jpg',
+    'image/exhibitions/2023/pokettales/image8.jpg',
+    'image/exhibitions/2023/pokettales/image9.jpg',
+    'image/exhibitions/2023/pokettales/image10.jpg',
+    'image/exhibitions/2023/pokettales/image11.jpg',
+    'image/exhibitions/2023/pokettales/image12.jpg',
+    'image/exhibitions/2023/pokettales/image13.jpg',
+  ],
+  hakgojae2023: [
+    'image/exhibitions/2023/hakgojae/image1.jpg',
+    'image/exhibitions/2023/hakgojae/image2.jpg',
+    'image/exhibitions/2023/hakgojae/image3.jpg',
+    'image/exhibitions/2023/hakgojae/image4.jpg',
+    'image/exhibitions/2023/hakgojae/image5.jpg',
+    'image/exhibitions/2023/hakgojae/image6.jpg',
+    'image/exhibitions/2023/hakgojae/image7.jpg',
+    'image/exhibitions/2023/hakgojae/image8.jpg',
   ],
   pageroom2024: [
     'image/exhibitions/2024/pageroom/2024_0215 (2).jpg',
@@ -288,7 +342,7 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2024', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2024-1', label: '없는 날, 페이지룸8, 서울', imgKey: 'pageroom2024' },
+          { t: 'show', id: 'exh-2024-1', label: '없는 날, 페이지룸8, 서울', imgKey: 'pageroom2024', imgCaptionKey: 'pageroom-text' },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2024-2', label: '황금 화살, This Is Not a Church(구 명성교회), 서울', imgKey: 'church2024' },
           { t: 'show', id: 'exh-2024-3', label: '메신저의 신비한 결속,\n대전시립미술관 대전창작센터, 대전', imgKey: 'daejeon2024', imgCaptionKey: 'daejeon2024-text' },
@@ -300,10 +354,10 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2023-1', label: '느슨히 껴안고 단단히 풀기, 갤러리인HQ, 서울' },
-          { t: 'show', id: 'exh-2023-2', label: 'Double Bind: 아티스트북프로젝트, 포켓테일즈, 서울' },
+          { t: 'show', id: 'exh-2023-1', label: '느슨히 껴안고 단단히 풀기, 갤러리인HQ, 서울', imgKey: 'in2023', imgCaptionKey: 'in-text-html' },
+          { t: 'show', id: 'exh-2023-2', label: 'Double Bind: 아티스트북프로젝트, 포켓테일즈, 서울', imgKey: 'pokettales2023' },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity :\n김세은, 유리 2인전, 학고재, 서울' },
+          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity :\n김세은, 유리 2인전, 학고재, 서울', imgKey: 'hakgojae2023' },
           { t: 'show', id: 'exh-2023-4', label: 'OCTO-, 페이지룸8, 서울' },
         ],
       },
@@ -906,7 +960,7 @@ function onShowClick(item, el) {
     });
     if (item.imgCaptionKey && textsContent[item.imgCaptionKey]) {
       const cap = document.createElement('div');
-      cap.style.cssText = 'margin:24px 0 0;font:inherit;line-height:1.5;';
+      cap.style.cssText = 'margin:72px 0 0;font:inherit;line-height:1.5;';
       if (item.imgCaptionKey.includes('-html')) {
         cap.innerHTML = textsContent[item.imgCaptionKey];
       } else {

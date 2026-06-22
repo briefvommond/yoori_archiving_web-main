@@ -113,6 +113,46 @@ const exhibitionImages = {
     'image/exhibitions/2025/hakgojae/image19.jpg',
     'image/exhibitions/2025/hakgojae/image20.jpg',
   ],
+  in2023: [
+    'image/exhibitions/2023/in/image1.jpg',
+    'image/exhibitions/2023/in/image2.jpg',
+    'image/exhibitions/2023/in/image3.jpg',
+    'image/exhibitions/2023/in/image4.jpg',
+    'image/exhibitions/2023/in/image5.jpg',
+    'image/exhibitions/2023/in/image6.jpg',
+    'image/exhibitions/2023/in/image7.jpg',
+    'image/exhibitions/2023/in/image8.jpg',
+    'image/exhibitions/2023/in/image9.jpg',
+    'image/exhibitions/2023/in/image10.jpg',
+    'image/exhibitions/2023/in/image11.jpg',
+    'image/exhibitions/2023/in/image12.jpg',
+    'image/exhibitions/2023/in/image13.jpg',
+  ],
+  pokettales2023: [
+    'image/exhibitions/2023/pokettales/image1.jpg',
+    'image/exhibitions/2023/pokettales/image2.jpg',
+    'image/exhibitions/2023/pokettales/image3.jpg',
+    'image/exhibitions/2023/pokettales/image4.jpg',
+    'image/exhibitions/2023/pokettales/image5.jpg',
+    'image/exhibitions/2023/pokettales/image6.jpg',
+    'image/exhibitions/2023/pokettales/image7.jpg',
+    'image/exhibitions/2023/pokettales/image8.jpg',
+    'image/exhibitions/2023/pokettales/image9.jpg',
+    'image/exhibitions/2023/pokettales/image10.jpg',
+    'image/exhibitions/2023/pokettales/image11.jpg',
+    'image/exhibitions/2023/pokettales/image12.jpg',
+    'image/exhibitions/2023/pokettales/image13.jpg',
+  ],
+  hakgojae2023: [
+    'image/exhibitions/2023/hakgojae/image1.jpg',
+    'image/exhibitions/2023/hakgojae/image2.jpg',
+    'image/exhibitions/2023/hakgojae/image3.jpg',
+    'image/exhibitions/2023/hakgojae/image4.jpg',
+    'image/exhibitions/2023/hakgojae/image5.jpg',
+    'image/exhibitions/2023/hakgojae/image6.jpg',
+    'image/exhibitions/2023/hakgojae/image7.jpg',
+    'image/exhibitions/2023/hakgojae/image8.jpg',
+  ],
   pageroom2024: [
     'image/exhibitions/2024/pageroom/2024_0215 (2).jpg',
     'image/exhibitions/2024/pageroom/2024_0215 (5).jpg',
@@ -227,7 +267,7 @@ const menuStructure = [
       { t: 'show', id: 'text-5',  label: 'Monthly Art, August 2025 issue, [Artist Book Special Feature], artist text "Composing the Unreadable" by Yoori' },
       { t: 'show', id: 'text-6',  label: 'Art in Culture, January 2025 issue, [FOCUS], "Young Artists Shooting for the Stars"' },
       { t: 'show', id: 'text-7',  label: 'Monthly Art, February 2024 issue, [UP-AND-COMING ARTISTS], "A Poem Sent to a Being Never Called by Language," by Kim So-jung', textKey: 'upandcoming-text-html-en' },
-      { t: 'show', id: 'text-8',  label: 'Exhibition Essay for 《Non-existent day》, by Park Jung-won' },
+      { t: 'show', id: 'text-8',  label: 'Exhibition Essay for 《Non-existent day》, by Park Jung-won', textKey: 'pageroom-text-en' },
       { t: 'show', id: 'text-9',  label: 'Exhibition Essay for 《Bind Loosely & Loosen tightly》, "The Age of Silence and Pensées of the Night," by Mohee', textKey: 'in-text-html-en' },
       { t: 'show', id: 'text-10', label: 'Exhibition Review for 《Hugged tight but couldn\'t reach each other》, "Between My Story and Yours," by Kwon Jung-hyun' },
     ],
@@ -283,7 +323,7 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2024', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2024-1', label: 'Non-existent Day, Pageroom8, Seoul', imgKey: 'pageroom2024' },
+          { t: 'show', id: 'exh-2024-1', label: 'Non-existent Day, Pageroom8, Seoul', imgKey: 'pageroom2024', imgCaptionKey: 'pageroom-text-en' },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2024-2', label: 'Golden Arrow, This Is Not a Church, Seoul', imgKey: 'church2024' },
           { t: 'show', id: 'exh-2024-3', label: 'Mysterious Solidarities of Messengers, Daejeon Art Centre (Daejeon Museum of Art), Daejeon', imgKey: 'daejeon2024', imgCaptionKey: 'daejeon2024-text-en' },
@@ -295,10 +335,10 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2023-1', label: "Bind Loosely & Loosen tightly, Gallery IN HQ, Seoul" },
-          { t: 'show', id: 'exh-2023-2', label: "Double Bind : Artist's book project, Pokettales, Seoul" },
+          { t: 'show', id: 'exh-2023-1', label: "Bind Loosely & Loosen tightly, Gallery IN HQ, Seoul", imgKey: 'in2023', imgCaptionKey: 'in-text-html-en' },
+          { t: 'show', id: 'exh-2023-2', label: "Double Bind : Artist's book project, Pokettales, Seoul", imgKey: 'pokettales2023' },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity, Hakgojae, Seoul' },
+          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity, Hakgojae, Seoul', imgKey: 'hakgojae2023' },
           { t: 'show', id: 'exh-2023-4', label: 'OCTO- , Pageroom8, Seoul' },
         ],
       },
@@ -627,6 +667,25 @@ Kim Haeseo (Writer)
 *The title is taken from John Berger's Here Is Where We Meet (Youlhwadang).
 Written by Kim Haeseo (@unanswered.letters)
 Translated by Joosang (@kxxzxx)`,
+  'pageroom-text-en': `Solo Exhibition 《Non-existent Day》 Pageroom8, 2024
+
+
+Jungwon Park (Director of Pageroom8)
+
+
+Non-existent Day is about the point at which one can glimpse the intuition through which the images in Yoori's paintings come into being. Before discussing this, I would like to begin with a brief reflection on a work I encountered in November 2022, 〈A Temporary Scene〉. At the time, Yoori's works dealt with things that reside in realms beyond the reach of language. They featured a ladder climbed by stepping on wings, a woman watering the sea, and a duck with wheels. They seemed to momentarily hold, in image form, those things that could not quite be articulated in words yet evoked a quiet smile, or moments that visual perception alone could not fully grasp. The forms of that period appeared as though even mourning had been folded into the emotion of happiness. Yet 〈A Temporary Scene〉 (2022) was somewhat different. True to its title, it fully embodied a landscape that existed only provisionally. Deep green grass painted onto a wooden panel as if planted there, a rainbow suspended in a sky that seemed neither day nor night, and mounds of clay apparently being kneaded by the artist, delaying their determination into any fixed shape, while the veil covering them created a peculiar tension. Excavated by the emotions welling up within the artist's body somewhere between mirage and presence, these images continually invited anticipation for the stories yet to come. Non-existent Day foretells a scene in which another form emerges, as though lifting the veil draped over the mound in 〈A Temporary Scene〉.
+
+On February 29, 2024, a day absent from the world for four years arrives once again. It seems almost inevitable that Yoori would intuitively weave the slender thread connected to her thirtieth-of-February birthday into the skein of the non-existent day with tiny ribbons. This year, on her birthday, the cycle of a month—the time it takes the moon to orbit the earth—and the cycle of a year—the time it takes the earth to orbit the sun—coincide. Moreover, the artist, who was born carrying a dream of embracing a full moon, will celebrate her birthday on a night when the moon is once again completely full.
+
+〈The Floating Particles〉 is both a painting and an installation composed by suspending nine works from 〈The Unknown〉, each depicting different figures, from a wooden panel reaching the height of the exhibition space. Images of anonymity, mystery, and the unknown are at once adrift and bound within a landscape containing an old tree unable to conceal its great wings. A birthday marks a beginning, a birthday repeats itself, and a birthday inevitably comes to an end. Life and death—these philosophical yet vivid realities—are always either wished to culminate in joy or stained with fear. The presence of being alive is so close to the act of breathing that it often escapes notice. In a place that cannot be described as heaven, hell, or even purgatory, one chooses instead to become dust drifting like mist.
+
+Yoori's 『Non-existent Day』 is an artist's book composed of 366 drawings. Each drawing is assigned a date, granting temporal markers to images that surfaced as bodily horizons of the world she seeks. Perhaps these dates commemorate moments that sparkled and vanished. In this way, the non-existent day became an existing day. The act of turning pages forms a point of contact with the gaze of an anonymous other. The book is neither entirely a book nor merely a supplement to the exhibition, but occupies a unique threshold of the artist's own making. Yoori discovers in the physical beauty and conceptual nature of the book a symbolic paradoxical world in which opening the book turns the inside outward, and gazing at the outside turns it inward. Just as opening a book creates a space between pages where anyone and anything may intervene, her work is a process of creating possibilities of "in-betweenness" within what otherwise appears as a tightly closed mass.
+
+The artist continues to work with both wooden panels and canvas. In particular, her oil paintings on wood combine gestures of squeezing and carving. As seen in 〈The Floating Particles〉, placing canvas upon wooden panels expands the genre of painting into the realm of sculpture and installation. Likewise, in 〈Heavy Words〉 (2023), one finds intriguing forms that emerge alongside disappearance: foldable sculptures inspired by the physicality of books and surfaces carved away with chisels. By connecting and simultaneously dismantling wooden panels and canvases, paintings and books, Yoori establishes her own threshold on the level of materiality. Furthermore, her attitude toward books and paintings represents a new kind of discovery and experiment that slips beyond conventional notions of painting and language themselves.
+
+Yoori's intuition is not something chosen in an instant. Rather, it is naturally embodied and manifested as the world of thresholds fills her body, much as the non-existent day itself arrives in reality. Thus, her images require time to dissolve into multiple sensory realms before they are completed. This may partly be a deferential attitude aimed at avoiding a world too readily reduced to concepts through language. More importantly, however, they are formed through the operation of the artist's imagination and insight, both set into motion from a single fragment of thought. The world that had never existed, woven from the small clue of a birthday, had already been there within Non-existent Day.
+
+The February 29 that has now passed will once again become, for some time, a "non-existent day." And I find myself returning to 〈A Temporary Scene〉. A being and a world that still exist, though absent for a while; invisible, yet not extinguished… I remember the point where, though I could not see clearly, I briefly found footing and touched it through sensation. This is both my personal impression of 〈A Temporary Scene〉 and my response to Yoori's work as a whole. Because her work seeks to render what resists language, it remains difficult to express fully in words. Yet I believe that the clues to those images that once testified to themselves within me like mirages, though they may seem to fade and conceal themselves in everyday life, will one day reappear unexpectedly—like Non-existent Day itself—when one gropes toward the memory of that singular time.`,
 };
 
 // ── CV / Contact 영문 콘텐츠 ───────────────────────────────────────────
@@ -936,7 +995,7 @@ function onShowClick(item, el) {
     });
     if (item.imgCaptionKey && textsContent[item.imgCaptionKey]) {
       const cap = document.createElement('div');
-      cap.style.cssText = 'margin:24px 0 0;font:inherit;line-height:1.5;';
+      cap.style.cssText = 'margin:72px 0 0;font:inherit;line-height:1.5;';
       if (item.imgCaptionKey.includes('-html')) {
         cap.innerHTML = textsContent[item.imgCaptionKey];
       } else {
