@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url('image/ghost2_cursor.png') 10 16, auto;
 }
 
 html, body {
