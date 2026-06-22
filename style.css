@@ -278,10 +278,26 @@ html, body {
 
 .project-images.active { display: block; }
 
+.project-images.grid-2,
+.project-images.active.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-bottom: 50vh;
+}
+
 .project-images img {
   display: block;
   width: 100%;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+.project-images.grid-2 img {
+  margin-bottom: 0;
+}
+
+.project-images.grid-2 > div {
+  grid-column: 1 / -1;
 }
 
 .project-images img:last-child { margin-bottom: 0; }
