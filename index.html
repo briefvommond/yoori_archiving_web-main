@@ -1196,7 +1196,7 @@ function stopGhosts() {
   ghostState = [];
 }
 
-menuToggle.addEventListener('click', openMenu);
+menuToggle.addEventListener('click', () => { if (menuPanel.classList.contains('open')) closeMenu(); else openMenu(); });
 menuCloseBtn.addEventListener('click', closeMenu);
 if (window.innerWidth > 768) openMenu();
 restoreStateFromURL();

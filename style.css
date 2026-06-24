@@ -53,23 +53,17 @@ html, body {
   top: 12px;
   right: 18px;
   z-index: 100;
-  background: var(--bg, #faf9f6);
+  background: #000;
   border: none;
   cursor: pointer;
   font: inherit;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: 0.1em;
-  color: #000;
+  color: #fff;
   padding: 3px 5px;
   line-height: 1;
   text-decoration: none;
-}
-
-.lang-btn.content-open,
-.menu-toggle.content-open {
-  background: #000;
-  color: var(--bg, #faf9f6);
 }
 
 /* ── MENU PANEL ───────────────────────────────────── */
@@ -359,26 +353,21 @@ html, body {
 /* ── MOBILE ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: block !important;
     position: fixed;
     top: 12px;
     left: 18px;
-    z-index: 100;
-    background: var(--bg, #faf9f6);
+    z-index: 200;
+    background: #000;
     border: none;
     cursor: pointer;
     font: inherit;
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.1em;
-    color: #000;
+    color: #fff;
     padding: 3px 5px;
     line-height: 1;
-  }
-
-  .menu-toggle.content-open {
-    background: #000;
-    color: var(--bg, #faf9f6);
   }
 
   .layout {
@@ -386,9 +375,7 @@ html, body {
   }
 
   .left {
-    width: 0;
-    height: 0;
-    overflow: hidden;
+    display: none;
   }
 
   .right {
@@ -397,7 +384,7 @@ html, body {
     margin-left: 0;
   }
 
-  .project-open .left  { width: 0; height: 0; }
+  .project-open .left  { display: none; }
   .project-open .right { width: 100%; height: 100%; margin-left: 0; }
 
   .menu-panel {
