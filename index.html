@@ -10,7 +10,7 @@
 <body>
 
   <!-- 메뉴 닫혔을 때: 좌상단 MENU 버튼 -->
-  <button class="menu-toggle" id="menuToggle">LIST</button>
+  <button class="menu-toggle" id="menuToggle">Yoori</button>
   <a class="lang-btn" id="langBtn" href="en.html">EN</a>
   <div class="menu-divider" id="menuDivider"></div>
 
@@ -1074,10 +1074,24 @@ function openMenu() {
   menuOpen = true;
   menuPanel.classList.add('open');
   menuDivider.classList.add('visible');
+  if (window.innerWidth <= 768) stopGhosts();
 }
 
 function closeMenu() {
+  if (window.innerWidth <= 768) {
+    menuOpen = false;
+    menuPanel.classList.remove('open');
+    menuDivider.classList.remove('visible');
+  }
   returnToLanding();
+}
+
+function closePanelOnly() {
+  if (window.innerWidth <= 768) {
+    menuOpen = false;
+    menuPanel.classList.remove('open');
+    menuDivider.classList.remove('visible');
+  }
 }
 
 function closePanelOnly() {
@@ -1182,8 +1196,9 @@ function stopGhosts() {
   ghostState = [];
 }
 
+menuToggle.addEventListener('click', openMenu);
 menuCloseBtn.addEventListener('click', closeMenu);
-openMenu();
+if (window.innerWidth > 768) openMenu();
 restoreStateFromURL();
 if (!window.location.search) startGhosts();
 </script>
