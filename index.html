@@ -845,7 +845,7 @@ function buildItems(container, items, usePrefix = false) {
       if (isYear) {
         header.dataset.label = item.label;
         header.dataset.arrow = '1';
-        header.textContent = '▶ ' + item.label;
+        header.textContent = '▶︎ ' + item.label;
       } else {
         header.textContent = item.label;
       }
@@ -912,14 +912,14 @@ function toggleAcc(body) {
       b.style.maxHeight = '0px';
       b.classList.remove('open');
       const h = b.previousElementSibling;
-      if (h && h.dataset.arrow) { h.textContent = '▶ ' + h.dataset.label; h.classList.remove('is-open'); }
+      if (h && h.dataset.arrow) { h.textContent = '▶︎ ' + h.dataset.label; h.classList.remove('is-open'); }
     });
   }
   if (!isOpen) {
     body.classList.add('open');
     body.style.maxHeight = '9999px';
     const header = body.previousElementSibling;
-    if (header && header.dataset.arrow) { header.textContent = '▼ ' + header.dataset.label; header.classList.add('is-open'); }
+    if (header && header.dataset.arrow) { header.textContent = '▼︎ ' + header.dataset.label; header.classList.add('is-open'); }
   }
 }
 
