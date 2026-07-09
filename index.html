@@ -31,6 +31,13 @@
     </div>
   </div>
 
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightboxPrev">&#8249;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-arrow lightbox-next" id="lightboxNext">&#8250;</button>
+  </div>
+
 <script>
 // ── 배경색 랜덤 ───────────────────────────────────────────────────────
 const bgPalette = ['#ffffff', '#ffffff', '#ffffff', '#ffffff'];
@@ -41,6 +48,73 @@ document.documentElement.style.setProperty('--bg', bgPalette[Math.floor(Math.ran
 const exhibitionImages = {
   selectedWorks: [
     'image/exhibition-hakgojae/hakgojae10.jpg',
+  ],
+  selectedWorks2025: [
+    'image/works/2025/image1.jpg',
+    'image/works/2025/image2.jpg',
+    'image/works/2025/image3.jpg',
+    'image/works/2025/image4.jpg',
+    'image/works/2025/image5.jpg',
+    'image/works/2025/image6.jpg',
+    'image/works/2025/image7.jpg',
+    'image/works/2025/image8.jpg',
+    'image/works/2025/image9.jpg',
+    'image/works/2025/image10.jpg',
+    'image/works/2025/image11.jpg',
+    'image/works/2025/image12.jpg',
+    'image/works/2025/image13.jpg',
+    'image/works/2025/image14.jpg',
+    'image/works/2025/image15.jpg',
+    'image/works/2025/image16.jpg',
+  ],
+  selectedWorks2024: [
+    'image/works/2024/image1.jpg',
+    'image/works/2024/image2.jpg',
+    'image/works/2024/image3.jpg',
+    'image/works/2024/image4.jpg',
+    'image/works/2024/Image5.jpg',
+    'image/works/2024/image6.jpg',
+    'image/works/2024/image7.jpg',
+    'image/works/2024/image8.jpg',
+    'image/works/2024/image9.jpg',
+    'image/works/2024/image10.jpg',
+    'image/works/2024/image11.jpg',
+    'image/works/2024/image12.jpg',
+    'image/works/2024/image13.jpg',
+    'image/works/2024/image14.jpg',
+    'image/works/2024/image15.jpg',
+    'image/works/2024/image16.jpg',
+    'image/works/2024/image17.jpg',
+    'image/works/2024/image18.jpg',
+    'image/works/2024/image19.jpg',
+  ],
+  loopPub: [
+    'image/publications/loop/2026.png',
+  ],
+  headacheProj: [
+    'image/projects/headache/image1.jpg',
+    'image/projects/headache/image2.jpg',
+    'image/projects/headache/image3.jpg',
+    'image/projects/headache/image4.jpg',
+    'image/projects/headache/image5.jpg',
+  ],
+  cherryProj: [
+    'image/projects/cherry.jpg',
+  ],
+  rainbowProj: [
+    'image/projects/rainbow.jpg',
+  ],
+  monographPub: [
+    'image/publications/monograph/image1.PNG',
+    'image/publications/monograph/image2.PNG',
+    'image/publications/monograph/image3.PNG',
+  ],
+  hugPub: [
+    'image/publications/hug/image1.jpg',
+    'image/publications/hug/image2.jpg',
+    'image/publications/hug/image3.jpg',
+    'image/publications/hug/image4.jpg',
+    'image/publications/hug/image5.jpg',
   ],
   pageroom: [
     'image/exhibitions/2024/pageroom/2024_0215 (2).jpg',
@@ -357,10 +431,10 @@ const menuStructure = [
   {
     t: 'acc', label: 'Publications',
     items: [
-      { t: 'show', id: 'pub-1', label: '전시 도록 『투명한 고리』 2026' },
+      { t: 'show', id: 'pub-1', label: '전시 도록 『투명한 고리』 2026', imgKey: 'loopPub' },
       { t: 'show', id: 'pub-2', label: '전시 도록 『황금 화살』 2025' },
-      { t: 'show', id: 'pub-3', label: '작품집 (2020-2024) 2024' },
-      { t: 'show', id: 'pub-4', label: '전시 도록 『이렇듯 포옹은 문장이 되지 못하고』 2022' },
+      { t: 'show', id: 'pub-3', label: '작품집 (2020-2024) 2024', imgKey: 'monographPub' },
+      { t: 'show', id: 'pub-4', label: '전시 도록 『이렇듯 포옹은 문장이 되지 못하고』 2022', imgKey: 'hugPub' },
     ],
   },
   { t: 'sep' },
@@ -369,9 +443,9 @@ const menuStructure = [
     items: [
       { t: 'show', id: 'proj-1', label: '『아무도 오지 않는 곳에서』(천선란, 허블 출판사) 커버', splitItems: [{ img: 'image/Projects/Where No One Comes.jpg', text: '『아무도 오지 않는 곳에서』\n  천선란\n  허블 출판사' }, { img: 'image/Projects/where no one comes_image.jpg', text: '<추락하는 마음으로>\n2022\noil on wood panel\n116.8x91cm' }] },
       { t: 'show', id: 'proj-2', label: '『영원히 계속되다가 끝이 난다』(앤 드 마르켄, 허블 출판사) 커버', splitItems: [{ img: 'image/Projects/anne.jpeg', text: '『영원히 계속되다가 끝이 난다』\n  앤 드 마르켄\n  허블 출판사' }, { img: 'image/Projects/anne_image.jpg', text: '<모의 비행>\n2023\noil on canvas\n53 x 45.5 cm' }] },
-      { t: 'show', id: 'proj-3', label: 'Damons Year, 《HEADACHE.》 아트워크 및 앨범 디자인' },
-      { t: 'show', id: 'proj-4', label: 'Damons Year, <Cherry> 커버 아트워크' },
-      { t: 'show', id: 'proj-5', label: 'Damons Year, <Rainbow> 커버 아트워크' },
+      { t: 'show', id: 'proj-3', label: 'Damons Year, 《HEADACHE.》 아트워크 및 앨범 디자인', imgKey: 'headacheProj', firstImgFit: true },
+      { t: 'show', id: 'proj-4', label: 'Damons Year, <Cherry> 커버 아트워크', imgKey: 'cherryProj', firstImgFit: true },
+      { t: 'show', id: 'proj-5', label: 'Damons Year, <Rainbow> 커버 아트워크', imgKey: 'rainbowProj', firstImgFit: true },
     ],
   },
   { t: 'sep' },
@@ -383,17 +457,17 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2026', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2026-3', label: '시간과 타자 : 유리, 윤일권 2인전, 스윕 서울, 서울', imgKey: 'sweep2026', imgCaptionKey: 'sweep2026-text-html' },
-          { t: 'show', id: 'exh-2026-1', label: '미시적 재난 : 양하, 유리 2인전, oaoa갤러리, 서울', imgKey: 'oaoa2026', imgCaptionKey: 'oaoa2026-text' },
-          { t: 'show', id: 'exh-2026-2', label: '새의 선물:Borderline, 별관, 서울', imgKey: 'outhouse2026' },
+          { t: 'show', id: 'exh-2026-3', label: '시간과 타자 : 유리, 윤일권 2인전, 스윕 서울, 서울', imgKey: 'sweep2026', imgCaptionKey: 'sweep2026-text-html', posterImgPath: 'image/exhibitions/2026/sweep/poster.jpg' },
+          { t: 'show', id: 'exh-2026-1', label: '미시적 재난 : 양하, 유리 2인전, oaoa갤러리, 서울', imgKey: 'oaoa2026', imgCaptionKey: 'oaoa2026-text', posterImgPath: 'image/exhibitions/2026/oaoa/poster.jpg' },
+          { t: 'show', id: 'exh-2026-2', label: '새의 선물:Borderline, 별관, 서울', imgKey: 'outhouse2026', posterImgPath: 'image/exhibitions/2026/outhouse/poster.JPG' },
         ],
       },
       {
         t: 'acc', label: '2025',
         items: [
-          { t: 'show', id: 'sel-2025', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'show', id: 'sel-2025', label: 'Selected works', imgKey: 'selectedWorks2025', imgColumns: 3, noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2025-1', label: '투명한 고리, 학고재, 서울', imgKey: 'hakgojae2025', imgCaptionKey: 'shapeless-loop-essay' },
+          { t: 'show', id: 'exh-2025-1', label: '투명한 고리, 학고재, 서울', imgKey: 'hakgojae2025', imgCaptionKey: 'shapeless-loop-essay', posterImgPath: 'image/exhibitions/2025/hakgojae/poster.JPG' },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2025-2', label: '작은 거인들, 구하우스, 양평', imgKey: 'koohouse2025' },
           { t: 'show', id: 'exh-2025-3', label: 'OCTO-, 페이지룸8 & 지우헌, 서울' },
@@ -402,13 +476,13 @@ const menuStructure = [
       {
         t: 'acc', label: '2024',
         items: [
-          { t: 'show', id: 'sel-2024', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'show', id: 'sel-2024', label: 'Selected works', imgKey: 'selectedWorks2024', imgColumns: 3, noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2024-1', label: '없는 날, 페이지룸8, 서울', imgKey: 'pageroom2024', imgCaptionKey: 'pageroom-text' },
+          { t: 'show', id: 'exh-2024-1', label: '없는 날, 페이지룸8, 서울', imgKey: 'pageroom2024', imgCaptionKey: 'pageroom-text', posterImgPath: 'image/exhibitions/2024/pageroom/poster.jpg' },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2024-2', label: '황금 화살, This Is Not a Church(구 명성교회), 서울', imgKey: 'church2024', imgCaptionKey: 'golden-text' },
-          { t: 'show', id: 'exh-2024-3', label: '메신저의 신비한 결속,\n대전시립미술관 대전창작센터, 대전', imgKey: 'daejeon2024', imgCaptionKey: 'daejeon2024-text' },
-          { t: 'show', id: 'exh-2024-4', label: '흰 작살을 머금은 바다, 서리풀청년아트갤러리, 서울', imgKey: 'seoripul2024' },
+          { t: 'show', id: 'exh-2024-2', label: '황금 화살, This Is Not a Church(구 명성교회), 서울', imgKey: 'church2024', imgCaptionKey: 'golden-text', posterImgPath: 'image/exhibitions/2024/thisisnotachurch/poster.jpg' },
+          { t: 'show', id: 'exh-2024-3', label: '메신저의 신비한 결속,\n대전시립미술관 대전창작센터, 대전', imgKey: 'daejeon2024', imgCaptionKey: 'daejeon2024-text', posterImgPath: 'image/exhibitions/2024/daejeon/poster.jpg' },
+          { t: 'show', id: 'exh-2024-4', label: '흰 작살을 머금은 바다, 서리풀청년아트갤러리, 서울', imgKey: 'seoripul2024', posterImgPath: 'image/exhibitions/2024/seoripul/poster.jpg' },
         ],
       },
       {
@@ -416,10 +490,10 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2023-1', label: '느슨히 껴안고 단단히 풀기, 갤러리인HQ, 서울', imgKey: 'in2023', imgCaptionKey: 'in-text-html' },
-          { t: 'show', id: 'exh-2023-2', label: 'Double Bind: 아티스트북프로젝트, 포켓테일즈, 서울', imgKey: 'pokettales2023', imgCaptionKey: 'pokettales-link-html' },
+          { t: 'show', id: 'exh-2023-1', label: '느슨히 껴안고 단단히 풀기, 갤러리인HQ, 서울', imgKey: 'in2023', imgCaptionKey: 'in-text-html', posterImgPaths: ['image/exhibitions/2023/in/poster1.png', 'image/exhibitions/2023/in/poster2.png'] },
+          { t: 'show', id: 'exh-2023-2', label: 'Double Bind: 아티스트북프로젝트, 포켓테일즈, 서울', imgKey: 'pokettales2023', imgCaptionKey: 'pokettales-link-html', posterImgPath: 'image/exhibitions/2023/pokettales/poster.GIF' },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity :\n김세은, 유리 2인전, 학고재, 서울', imgKey: 'hakgojae2023', imgCaptionKey: 'lucid-text' },
+          { t: 'show', id: 'exh-2023-3', label: 'Lucid Mystery / Dark Clarity :\n김세은, 유리 2인전, 학고재, 서울', imgKey: 'hakgojae2023', imgCaptionKey: 'lucid-text', posterImgPath: 'image/exhibitions/2023/hakgojae/poster.jpg' },
           { t: 'show', id: 'exh-2023-4', label: 'OCTO-, 페이지룸8, 서울' },
         ],
       },
@@ -428,12 +502,12 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2022', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
-          { t: 'show', id: 'exh-2022-1', label: 'Local Christmas Market, 디 언타이틀드 보이드, 서울', imgKey: 'local2022' },
-          { t: 'show', id: 'exh-2022-2', label: '불완전한 세계에서 완전한 경계로 :\n신소언, 유리 2인전, 페이지룸8, 서울', imgKey: 'pageroom82022' },
-          { t: 'show', id: 'exh-2022-3', label: 'Hop, Hop, Hope, 갤러리 인 HQ, 서울', imgKey: 'hop2022' },
+          { t: 'show', id: 'exh-2022-1', label: 'Local Christmas Market, 디 언타이틀드 보이드, 서울', imgKey: 'local2022', posterImgPath: 'image/exhibitions/2022/local/poster.jpg' },
+          { t: 'show', id: 'exh-2022-2', label: '불완전한 세계에서 완전한 경계로 :\n신소언, 유리 2인전, 페이지룸8, 서울', imgKey: 'pageroom82022', posterImgPath: 'image/exhibitions/2022/pageroom8/poster.jpg' },
+          { t: 'show', id: 'exh-2022-3', label: 'Hop, Hop, Hope, 갤러리 인 HQ, 서울', imgKey: 'hop2022', posterImgPath: 'image/exhibitions/2022/hop/poster.jpg' },
           { t: 'show', id: 'exh-2022-4', label: 'Drawing Growing, 미학관, 서울' },
-          { t: 'show', id: 'exh-2022-5', label: 'Muddy Forest : 김옥정, 유리 2인전, 갤러리 인, 서울', imgKey: 'muddy2022' },
-          { t: 'show', id: 'exh-2022-6', label: 'A에서 시작되는 울림,\nKT&G 상상마당 춘천 아트갤러리, 춘천', imgKey: 'theeco2022' },
+          { t: 'show', id: 'exh-2022-5', label: 'Muddy Forest : 김옥정, 유리 2인전, 갤러리 인, 서울', imgKey: 'muddy2022', posterImgPath: 'image/exhibitions/2022/muddy/poster.jpg' },
+          { t: 'show', id: 'exh-2022-6', label: 'A에서 시작되는 울림,\nKT&G 상상마당 춘천 아트갤러리, 춘천', imgKey: 'theeco2022', posterImgPath: 'image/exhibitions/2022/theeco/poster.jpg' },
         ],
       },
       {
@@ -441,10 +515,10 @@ const menuStructure = [
         items: [
           { t: 'show', id: 'sel-2021', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
-          { t: 'show', id: 'exh-2021-1', label: '이렇듯 포옹은 문장이 되지 못하고, 별관, 서울', imgKey: 'hugged2021' },
+          { t: 'show', id: 'exh-2021-1', label: '이렇듯 포옹은 문장이 되지 못하고, 별관, 서울', imgKey: 'hugged2021', posterImgPath: 'image/exhibitions/2021/hugged/poster.jpg' },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2021-2', label: 'The Painters, 서울옥션 강남센터, 서울', imgKey: 'thepainters2021' },
-          { t: 'show', id: 'exh-2021-3', label: '구름 모양: 유리, 이서윤 2인전, 갤러리 아노브, 서울', imgKey: 'cloudshapes2021' },
+          { t: 'show', id: 'exh-2021-3', label: '구름 모양: 유리, 이서윤 2인전, 갤러리 아노브, 서울', imgKey: 'cloudshapes2021', posterImgPath: 'image/exhibitions/2021/cloudshapes/poster.jpg' },
           { t: 'show', id: 'exh-2021-4', label: '다시 만날 때까지, 아티스트런스페이스 쇼앤텔, 서울' },
         ],
       },
@@ -462,7 +536,7 @@ const menuStructure = [
           { t: 'show', id: 'sel-2019', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
           { t: 'cat', label: 'Group Exhibition' },
           { t: 'show', id: 'exh-2019-1', label: 'Zerobase: v2, 서울옥션 강남센터, 서울' },
-          { t: 'show', id: 'exh-2019-2', label: 'Taipei Artbook Fair, 송산 문창원구, 타이베이, 대만' },
+          { t: 'show', id: 'exh-2019-2', label: 'Taipei Artbook Fair, 송산 문창원구, 타이베이, 대만', posterImgPath: 'image/exhibitions/2019/taipei/poster.jpg' },
         ],
       },
       {
@@ -674,7 +748,7 @@ const textsContent = {
 
 
 
-  나에겐 흰 개가 있었다. 꼬리가 길고 날렵했으며, 햇빛을 받을 때마다 짙은 눈은 콜라처럼 톡 쏘는 갈색을 띠곤 했다. 귀가 쫑긋한 진도믹스. 이름은 흥구.
+나에겐 흰 개가 있었다. 꼬리가 길고 날렵했으며, 햇빛을 받을 때마다 짙은 눈은 콜라처럼 톡 쏘는 갈색을 띠곤 했다. 귀가 쫑긋한 진도믹스. 이름은 흥구.
 
 오래전에 나는 녀석을 떠나보냈으나, 순천 외서면 대숲이 많은 엄마의 고향 마을로 들어서는 순간마다 되살아나 짖어대는 녀석을 잠재우느라 지금도 속으로 '쉿-'을 외곤 한다. 그렇다. 흥구는 외할아버지가 키우는 개였으므로 엄밀히 말하면 나는 그 개를 가진 적 없다. 흥구에게 나는 어쩌다 한 번 마주하는 애, 오묘하지만 역겨운 데가 있는 도시 냄새를 풍기는 계집이었을 것이다. 심드렁한 표정으로 인간들 사이에 있다가 가끔 다가와서 머리와 콧등을 쓰다듬고 돌아서는, 녀석이 후한 마음으로 손바닥을 핥아주기라도 하면 눈썹을 꿈틀거리고 질색하는 알 수 없는 계집 말이다.
 
@@ -684,7 +758,7 @@ const textsContent = {
 
 그래서 이해되지 않았다. 그 개의 환영과 환청을 만날 때마다.
 
-     개가 떠나기 몇 주 전, 어른들은 흥구의 목줄을 자주 풀어주며 마당을 노닐게 해주었다. 기쁜 개의 발걸음은 시멘트 마당 위에서 '토도도도도' 소리를 내며 멈추지 않았다. 그리고 나는 들었다. 외할아버지 투병 기간에 모두가 피난 가듯 짐을 바리바리 싸 병원으로 떠났을 때, 흥구는 할아버지가 평소보다 듬뿍 주고 간 사료를 조금씩 나눠 먹은 덕에 굶어 죽지 않고 버틸 수 있었다고. 삼촌들 중 한 사람이 2주만에 방문했을 때도 녀석은 사료를 다 먹지 않고 남겨두기까지 했다. 그것을 끝으로, 흥구에겐 또다시 긴 기다림이 있었고 금방 돌아오겠다던 주인이 다시 대문을 열고 들어오는 일은 없었다.
+개가 떠나기 몇 주 전, 어른들은 흥구의 목줄을 자주 풀어주며 마당을 노닐게 해주었다. 기쁜 개의 발걸음은 시멘트 마당 위에서 '토도도도도' 소리를 내며 멈추지 않았다. 그리고 나는 들었다. 외할아버지 투병 기간에 모두가 피난 가듯 짐을 바리바리 싸 병원으로 떠났을 때, 흥구는 할아버지가 평소보다 듬뿍 주고 간 사료를 조금씩 나눠 먹은 덕에 굶어 죽지 않고 버틸 수 있었다고. 삼촌들 중 한 사람이 2주만에 방문했을 때도 녀석은 사료를 다 먹지 않고 남겨두기까지 했다. 그것을 끝으로, 흥구에겐 또다시 긴 기다림이 있었고 금방 돌아오겠다던 주인이 다시 대문을 열고 들어오는 일은 없었다.
 
 외할아버지의 유품과 유산이 정리되는 과정 속에서, 나는 귀를 세웠다. 어른들의 이야기에서 다시 '흥구'가 등장하지 않을까 기다렸던 것 같다. 할아버지는 흥구를 아꼈으니까. 그러나 내가 아는 것은 여기까지다.
 
@@ -981,6 +1055,39 @@ const rightCover   = document.getElementById('rightCover');
 const projectImgs  = document.getElementById('projectImages');
 const textContent  = document.getElementById('textContent');
 const splitView    = document.getElementById('splitView');
+const lightbox      = document.getElementById('lightbox');
+const lightboxImg   = document.getElementById('lightboxImg');
+const lightboxPrev  = document.getElementById('lightboxPrev');
+const lightboxNext  = document.getElementById('lightboxNext');
+const lightboxClose = document.getElementById('lightboxClose');
+let lightboxImgs = [];
+let lightboxIndex = 0;
+
+function openLightbox(imgs, index) {
+  lightboxImgs = imgs;
+  lightboxIndex = index;
+  lightboxImg.src = lightboxImgs[lightboxIndex];
+  lightbox.classList.add('active');
+}
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+}
+function showLightboxOffset(offset) {
+  if (!lightboxImgs.length) return;
+  lightboxIndex = (lightboxIndex + offset + lightboxImgs.length) % lightboxImgs.length;
+  lightboxImg.src = lightboxImgs[lightboxIndex];
+}
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', () => showLightboxOffset(-1));
+lightboxNext.addEventListener('click', () => showLightboxOffset(1));
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowLeft') showLightboxOffset(-1);
+  else if (e.key === 'ArrowRight') showLightboxOffset(1);
+});
 const langBtn      = document.getElementById('langBtn');
 
 let menuOpen = false;
@@ -1003,6 +1110,9 @@ function buildItems(container, items, usePrefix = false) {
       el.dataset.itemTextKey = item.textKey || '';
       el.dataset.itemTextImgPath = item.textImgPath || '';
       el.dataset.itemImgCaptionKey = item.imgCaptionKey || '';
+      el.dataset.itemPosterImgPath = item.posterImgPath || '';
+      el.dataset.itemPosterImgPaths = item.posterImgPaths ? JSON.stringify(item.posterImgPaths) : '';
+      el.dataset.itemFirstImgFit = item.firstImgFit ? '1' : '';
       el.dataset.itemSplitImg = item.splitImg || '';
       el.dataset.itemSplitImgs = item.splitImgs ? JSON.stringify(item.splitImgs) : '';
       el.dataset.itemSplitItems = item.splitItems ? JSON.stringify(item.splitItems) : '';
@@ -1108,6 +1218,8 @@ function onNavClick(key, el) {
   menuToggle.classList.add('content-open');
   rightCover.classList.add('hidden');
   projectImgs.classList.remove('active');
+  projectImgs.classList.remove('grid-2');
+  projectImgs.classList.remove('grid-3');
   projectImgs.innerHTML = '';
 
   const html = key === 'cv' ? cvHTML : key === 'contact' ? contactHTML : '';
@@ -1132,6 +1244,8 @@ function onShowClick(item, el) {
 
   if (item.splitItems || item.splitImg || item.splitImgs) {
     projectImgs.classList.remove('active');
+    projectImgs.classList.remove('grid-2');
+    projectImgs.classList.remove('grid-3');
     projectImgs.innerHTML = '';
     textContent.classList.remove('active');
     textContent.innerHTML = '';
@@ -1161,6 +1275,8 @@ function onShowClick(item, el) {
     splitView.style.display = 'none';
     splitView.innerHTML = '';
     projectImgs.classList.remove('active');
+    projectImgs.classList.remove('grid-2');
+    projectImgs.classList.remove('grid-3');
     projectImgs.innerHTML = '';
     textContent.innerHTML = '';
     if (item.textKey.includes('-html')) {
@@ -1191,10 +1307,39 @@ function onShowClick(item, el) {
     } else {
       projectImgs.classList.remove('grid-2');
     }
-    imgs.forEach(src => {
+    if (item.imgColumns === 3) {
+      projectImgs.classList.add('grid-3');
+    } else {
+      projectImgs.classList.remove('grid-3');
+    }
+    if (item.posterImgPaths) {
+      const posterRow = document.createElement('div');
+      posterRow.style.cssText = 'display:flex;align-items:flex-start;gap:4px;margin:0 0 24px 0;width:100%;';
+      item.posterImgPaths.forEach(src => {
+        const poster = document.createElement('img');
+        poster.src = src;
+        poster.alt = '';
+        poster.style.cssText = 'width:33.333%;flex:0 0 33.333%;display:block;margin:0;';
+        posterRow.appendChild(poster);
+      });
+      projectImgs.appendChild(posterRow);
+    } else if (item.posterImgPath) {
+      const poster = document.createElement('img');
+      poster.src = item.posterImgPath;
+      poster.alt = '';
+      poster.style.cssText = 'width:33.333%;display:block;margin:0 0 24px 0;';
+      projectImgs.appendChild(poster);
+    }
+    imgs.forEach((src, i) => {
       const img = document.createElement('img');
       img.src = src;
       img.alt = '';
+      if (item.firstImgFit && i === 0) {
+        img.style.cssText = 'width:auto;max-width:100%;max-height:96vh;display:block;margin:0 0 24px 0;';
+      }
+      if (item.imgColumns === 3) {
+        img.addEventListener('click', () => openLightbox(imgs, i));
+      }
       projectImgs.appendChild(img);
     });
     if (item.imgCaptionKey && textsContent[item.imgCaptionKey]) {
@@ -1232,6 +1377,7 @@ function returnToLanding() {
   layout.classList.remove('project-open');
   projectImgs.classList.remove('active');
   projectImgs.classList.remove('grid-2');
+  projectImgs.classList.remove('grid-3');
   projectImgs.innerHTML = '';
   textContent.classList.remove('active');
   textContent.innerHTML = '';
@@ -1314,7 +1460,7 @@ function restoreStateFromURL() {
         if (h && h.dataset.arrow) { h.textContent = '▼ ' + h.dataset.label; h.classList.add('is-open'); }
         ancestor = ancestor.parentElement?.closest('.acc-body');
       }
-      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, textImgPath: el.dataset.itemTextImgPath || null, imgCaptionKey: el.dataset.itemImgCaptionKey || null, splitImg: el.dataset.itemSplitImg || null, splitImgs: el.dataset.itemSplitImgs ? JSON.parse(el.dataset.itemSplitImgs) : null, splitItems: el.dataset.itemSplitItems ? JSON.parse(el.dataset.itemSplitItems) : null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
+      onShowClick({ id: el.dataset.itemId || null, imgKey: el.dataset.imgKey || null, textKey: el.dataset.itemTextKey || null, textImgPath: el.dataset.itemTextImgPath || null, imgCaptionKey: el.dataset.itemImgCaptionKey || null, posterImgPath: el.dataset.itemPosterImgPath || null, posterImgPaths: el.dataset.itemPosterImgPaths ? JSON.parse(el.dataset.itemPosterImgPaths) : null, firstImgFit: el.dataset.itemFirstImgFit === '1', splitImg: el.dataset.itemSplitImg || null, splitImgs: el.dataset.itemSplitImgs ? JSON.parse(el.dataset.itemSplitImgs) : null, splitItems: el.dataset.itemSplitItems ? JSON.parse(el.dataset.itemSplitItems) : null, splitText: el.dataset.itemSplitText || null, label: el.dataset.itemLabel }, el);
     }
   }
 }
