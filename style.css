@@ -346,6 +346,8 @@ html, body {
 @media (max-width: 768px) {
   .lightbox-arrow { font-size: 40px; }
   .lightbox-close { font-size: 28px; }
+  .poster-single { width: 100% !important; }
+  .poster-row { width: 100% !important; }
 }
 
 /* ── 텍스트 콘텐츠 (C.V, Contact) ────────────────── */

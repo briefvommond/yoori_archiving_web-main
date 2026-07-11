@@ -83,6 +83,38 @@ const exhibitionImages = {
     'image/works/2024/image18.jpg',
     'image/works/2024/image19.jpg',
   ],
+  selectedWorks2023: [
+    'image/works/2023/image1.jpg',
+    'image/works/2023/image2.jpg',
+    'image/works/2023/image3.jpg',
+    'image/works/2023/image4.jpg',
+    'image/works/2023/image5.jpg',
+    'image/works/2023/image6.jpg',
+    'image/works/2023/image7.jpg',
+    'image/works/2023/image8.jpg',
+    'image/works/2023/image9.jpg',
+    'image/works/2023/image10.jpg',
+    'image/works/2023/image11.jpg',
+    'image/works/2023/image12.jpg',
+    'image/works/2023/image13.jpg',
+    'image/works/2023/image14.jpg',
+    'image/works/2023/image15.jpg',
+    'image/works/2023/image16.jpg',
+    'image/works/2023/image17.jpg',
+    'image/works/2023/image18.jpg',
+    'image/works/2023/image19.jpg',
+    'image/works/2023/image20.jpg',
+    'image/works/2023/image21.jpg',
+    'image/works/2023/image22.jpg',
+    'image/works/2023/image23.jpg',
+    'image/works/2023/image24.jpg',
+    'image/works/2023/image25.jpg',
+    'image/works/2023/image26.jpg',
+    'image/works/2023/image27.jpg',
+    'image/works/2023/image28.jpg',
+    'image/works/2023/image29.jpg',
+    'image/works/2023/image30.jpg',
+  ],
   loopPub: [
     'image/publications/loop/2026.png',
   ],
@@ -469,7 +501,7 @@ const menuStructure = [
       {
         t: 'acc', label: '2023',
         items: [
-          { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks', noPrefix: true },
+          { t: 'show', id: 'sel-2023', label: 'Selected works', imgKey: 'selectedWorks2023', imgColumns: 3, noPrefix: true },
           { t: 'cat', label: 'Solo Exhibition' },
           { t: 'show', id: 'exh-2023-1', label: "Bind Loosely & Loosen tightly, Gallery IN HQ, Seoul", imgKey: 'in2023', imgCaptionKey: 'in-text-html-en', posterImgPaths: ['image/exhibitions/2023/in/poster1.png', 'image/exhibitions/2023/in/poster2.png'] },
           { t: 'show', id: 'exh-2023-2', label: "Double Bind : Artist's book project, Pokettales, Seoul", imgKey: 'pokettales2023', imgCaptionKey: 'pokettales-link-html', posterImgPath: 'image/exhibitions/2023/pokettales/poster.GIF' },
@@ -1358,24 +1390,6 @@ function onShowClick(item, el) {
       projectImgs.style.gridTemplateColumns = '';
       projectImgs.style.gap = '';
     }
-    if (item.posterImgPaths) {
-      const posterRow = document.createElement('div');
-      posterRow.style.cssText = 'display:flex;align-items:flex-start;gap:4px;margin:0 0 24px 0;width:100%;';
-      item.posterImgPaths.forEach(src => {
-        const poster = document.createElement('img');
-        poster.src = src;
-        poster.alt = '';
-        poster.style.cssText = 'width:33.333%;flex:0 0 33.333%;display:block;margin:0;';
-        posterRow.appendChild(poster);
-      });
-      projectImgs.appendChild(posterRow);
-    } else if (item.posterImgPath) {
-      const poster = document.createElement('img');
-      poster.src = item.posterImgPath;
-      poster.alt = '';
-      poster.style.cssText = 'width:33.333%;display:block;margin:0 0 24px 0;';
-      projectImgs.appendChild(poster);
-    }
     imgs.forEach((src, i) => {
       const img = document.createElement('img');
       img.src = src;
@@ -1400,6 +1414,26 @@ function onShowClick(item, el) {
         cap.appendChild(pre);
       }
       projectImgs.appendChild(cap);
+    }
+    if (item.posterImgPaths) {
+      const posterRow = document.createElement('div');
+      posterRow.className = 'poster-row';
+      posterRow.style.cssText = 'display:flex;align-items:flex-start;gap:4px;margin:72px 0 0;width:50%;';
+      item.posterImgPaths.forEach(src => {
+        const poster = document.createElement('img');
+        poster.src = src;
+        poster.alt = '';
+        poster.style.cssText = 'flex:1;display:block;margin:0;';
+        posterRow.appendChild(poster);
+      });
+      projectImgs.appendChild(posterRow);
+    } else if (item.posterImgPath) {
+      const poster = document.createElement('img');
+      poster.className = 'poster-single';
+      poster.src = item.posterImgPath;
+      poster.alt = '';
+      poster.style.cssText = 'width:50%;display:block;margin:72px 0 0;';
+      projectImgs.appendChild(poster);
     }
     projectImgs.classList.add('active');
   }
