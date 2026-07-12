@@ -520,7 +520,7 @@ const menuStructure = [
       { t: 'show', id: 'text-1',  label: 'Exhibition Essay for 《Shapeless Loop》, "Shapeless Loop for Our Annyeong(安寧)," by Han Joo-ok', textKey: 'shapeless-loop-essay-en' },
       { t: 'show', id: 'text-2',  label: 'Exhibition Review for 《Shapeless Loop》, "Here Is Where We Meet," by Kim Hae-seo', textKey: 'review-text-en' },
       { t: 'show', id: 'text-3',  label: 'Arts & Culture Column for Segye Ilbo, "For the Time After the End – Tenderly Calling Back Vanished Beings," by Shin Lisa', textKey: 'segye-essay-en', textImgPath: 'texts/segye.JPG' },
-      { t: 'show', id: 'text-4',  label: 'Monthly Art, January 2026 issue, [Editor\'s Pick]', imgKey: 'editorspick', imgColumns: 2, imgCaptionKey: 'editorspick-text' },
+      { t: 'show', id: 'text-4',  label: 'Monthly Art, January 2026 issue, [Editor\'s Pick]', textKey: 'editorspick-text-html-en' },
       { t: 'show', id: 'text-5',  label: 'Monthly Art, August 2025 issue, [Artist Book Special Feature], artist text "Composing the Unreadable" by Yoori', textKey: 'book-text-en' },
       { t: 'show', id: 'text-6',  label: 'Art in Culture, January 2025 issue, [FOCUS], "Young Artists Shooting for the Stars"', textKey: 'focus-text-en' },
       { t: 'show', id: 'text-7',  label: 'Monthly Art, February 2024 issue, [UP-AND-COMING ARTISTS], "A Poem Sent to a Being Never Called by Language," by Kim So-jung', textKey: 'upandcoming-text-html-en' },
@@ -666,12 +666,18 @@ const menuStructure = [
 
 // ── Texts 콘텐츠 ─────────────────────────────────────────────────────
 const textsContent = {
-  'shapeless-loop-essay-en': `Solo Exhibition 《Shapeless Loop》(Hakgojae, 2025)
+  'shapeless-loop-essay-en': `Solo Exhibition 《Shapeless Loop》(Hakgojae, 2025) Exhibition Essay
 
 
-Han Joo-ok (Independent Curator)
 
-<Shapeless Loop for Our Annyeong(安寧)>
+
+
+
+Han Joo-ok | Independent Curator
+
+
+
+《Shapeless Loop for Our Annyeong(安寧)》
 
 At times, memory becomes a trigger for glimpsing what lies ahead. When a scene from the past unexpectedly cuts through the present, it recalls the patterns that have carried the world forward while simultaneously becoming an omen of what is yet to come. It is the moment when different temporal lines fold into one. Every trajectory—in nature and in human life—eventually converges into the present. Perhaps this is why connection has long been represented as an infinite loop, a trajectory with neither origin nor terminus. For a long time, the artist Yoori has made this sense of connection the central subject of her practice. She traces sensations that have slipped into the past and observes the emotions that accumulate in the space left by absence, remaining attentive to their potential to return in another form. Within this practice, in Shapeless Loop, the artist gathers moments when recurring feelings of loss collide with ordinary scenes in daily life. These are sensations perceived before language and signals that appear at the threshold of logic. She composes them into a transparent loop.
 
@@ -693,10 +699,14 @@ One day, the absence of someone—a trace slipped out of time and space—return
 ¹ Yoori, "Composing the Unreadable," Monthly Art, August 2025 issue, p. 80, quoted.
 
 Translated by Han Joo-ok`,
-  'lucid-text-en-html': `<div style="white-space:pre-wrap">Lucid Mystery / Dark Clarity (Duo Exhibition, Hakgojae gallery, 2023)
+  'lucid-text-en-html': `<div style="white-space:pre-wrap">《Lucid Mystery / Dark Clarity》(Hakgojae, 2023) Exhibition Essay
 
 
-Jin-myung Lee | Art Critic
+
+
+
+
+Lee Jin-myung | Art Critic
 
 
 
@@ -762,10 +772,14 @@ Bürger thus pleads with the sage because the meaning of life and all events tha
 <sup>4</sup> Ibid., 113e.
 <sup>5</sup> Yoori, Artist's Note (2022).
 <sup>6</sup> 王國維 (作), 周錫山 (評校), 『王國維文學美學論著集』(上海: 上海三聯書店, 2018), 16.</div>`,
-  'hugged-text-en-html': `<div style="white-space:pre-wrap">Solo exhibition 《Hugged tight but couldn't reach each other》 (Outhouse, 2021)
+  'hugged-text-en-html': `<div style="white-space:pre-wrap">Solo Exhibition 《Hugged tight but couldn't reach each other》(Outhouse, 2021) Exhibition Essay
+
+
+
+
+
 
 Anbuh | Artist, the director of Outhouse
-
 
 
 
@@ -786,14 +800,18 @@ And I didn't read that book.
 
 <div style="white-space:pre-line;font-size:0.85em;margin-top:1em;"><sup>1</sup>  『A gift from a bird』, Eun Heekyung.</div></div>`,
 
-  'kwon-text-en': ` ≪Hugged tight but couldn't reach each other≫ (Solo Exhibition, Outhouse, 2021)
- : Exhibition Review
+  'kwon-text-en': `Solo Exhibition 《Hugged tight but couldn't reach each other》(Outhouse, 2021) Exhibition Review
 
 
-Junghyun Kwon (Curator, Critic)
 
-<Between You and I>
 
+
+
+Junghyun Kwon | Curator, Critic
+
+
+
+《Between You and I》
 
 A sofa, a cup, and a fishbowl. A key, a pair of scissors, and a sunflower. A cloud, a firework, and an hourglass. I try to find a sentence among scattered pieces of words. Every trial always collapses. You don't make a sentence by putting a connection link into words. You don't want words to be a sentence, be fixed in death. Instead, you let them be themselves by embracing the infinite void. You don't believe a language could be defined as something else and then get an eternal value. Roland Barthes once said, "A text is not a line of words releasing a single 'theological' meaning (the message of the Author-God) but a multi-dimensional space in which a variety of writings, none of them original, blend and clash. The text is a tissue of quotations drawn from the innumerable centres of culture. …"¹ You create a loose texture of objects whose meaning is obscured. You don't want me to read one fixed narrative from your painting.
 
@@ -808,14 +826,18 @@ Between those lines, narratives of you and I overlap and contradict. Your scener
 
 ¹ Roland Barthes, The Pleasure of the Text, trans. Richard Miller (New York: Hill and Wang, 1975), 32.
 ² Roland Barthes, S/Z, trans. Richard Miller (Oxford: Blackwell, 1974), 13.`,
-  'book-text-en': `Monthly Art, August 2025 [Artist's Book Special Feature]
+  'book-text-en': `Monthly Art, August 2025 issue [Artist's Book Special Feature]
 
 
-Yoori (Artist)
 
 
-<Composing the Unreadable>
 
+
+Yoori | Visual Artist
+
+
+
+《Composing the Unreadable》
 
 To trace the origins of my artist's book practice, I must first uncover a somewhat crooked desire from my childhood. From a very young age, I was fascinated by stacks of paper bound into the form of a book. In particular, I was obsessed with preserving notebooks I loved in a perfectly pristine state. I was always eager to acquire new notebooks, and I would inevitably fill them with my drawings and writings. Yet if I felt that the traces of my hand had diminished the aesthetic quality of those pages in even the slightest way, I could not tolerate it. I would immediately tear out the offending page. Of course, the torn page would then damage the integrity of the notebook itself, and the poor thing would eventually be abandoned, forgotten in some corner, where it would remain forever asleep. For this reason, I was often scolded by my parents throughout my school years.
 
@@ -848,8 +870,14 @@ Since then, I have continued to expand my understanding of the book through expe
 Whenever I sew images together with needle and thread, or bind them with glue into the form of a book, I feel as though I am connecting images to a medium, linking my inner world to the external world, and ultimately creating connections between myself and others—or even between myself and the world at large. Beginning with the physical act of binding, the process invites me to imagine invisible connections that extend far beyond the material object itself. This practice allows my senses to reach in multiple directions, filling spaces that painting alone cannot occupy and functioning in a complementary relationship with my painting practice.
 
 What pages might I unfold, tear away, or turn through in the future? And how might I weave them together?`,
-  'pebbles-text-en-html': `<div style="white-space:pre-wrap">《The Sea Seeping into the White Pebbles》
+  'pebbles-text-en-html': `<div style="white-space:pre-wrap">《The Sea Seeping into the White Pebbles》(Seoripul gallery, 2024) Exhibition Essay
 
+
+
+
+
+
+Ryu Hee-yeon | Independent Curator
 
 
 
@@ -871,14 +899,16 @@ The worlds created here by four artists and one poet are not fragments cut from 
 
 
 
-Written by | Ryu Hee-yeon (Independent Curator)
-
-
 <div style="white-space:pre-line;font-size:0.85em;margin-top:1em;"><sup>1</sup> Baek Eun-sun, A Film Made of Scenes No One Remembers (Seoul: Hyundae Munhak, 2019), pp. 110–114.</div></div>`,
 
-  'golden-text-en': `《Golden Arrow》
+  'golden-text-en': `《Golden Arrow》(This Is Not a Church, 2024) Exhibition Essay
 
-Sung-geun Kim (Curator, Director of Rainbowcube)
+
+
+
+
+
+Kim Sung-geun | Curator, Director of Rainbowcube
 
 
 
@@ -952,14 +982,18 @@ Perhaps this is, after all, one way of approaching both the artwork and its make
 
 Much like those who once received, in silence and reverence, the words and lives of beings believed to have attained the sublime, we too are invited to encounter these works with quiet attentiveness.`,
 
-  'focus-text-en': `Art in Culture, January 2025 [FOCUS]
-
-Review of 《Golden Arrow》 (TINC, 2024)
-
-Nam Woong (Critic)
+  'focus-text-en': `Art in Culture, January 2025 issue [FOCUS] | Group Exhibition 《Golden Arrow》(TINC, 2024) Exhibition Review
 
 
-<Young Art Shoots for the Stars>
+
+
+
+
+Nam Woong | Critic
+
+
+
+《Young Art Shoots for the Stars》
 
 The exhibition 《Golden Arrow》 likens the moment a painter makes a brushstroke to the act of shooting an arrow into the darkness. In this metaphor, the shooting of the arrow becomes the act of creation; the arrow that ascends into the sky and becomes a star represents the artist of an era; and the light that offers direction within the darkness becomes noble art itself.
 
@@ -970,6 +1004,8 @@ Yet what remains can never be whole; it can never become the very time in which 
 One of the most striking features of the exhibition space is the series of plinths extending along both sides of a central passageway. Paintings rest upon sloped surfaces as though an arrow had cut a path through darkness. Despite the exhibition's central motif, however, the star that the arrow supposedly becomes is nowhere to be found. Instead, only Sanoh Lee's <Arrow> hangs in one corner of the gallery, its hollow shell remaining as testimony to the arrow's passage.
 
 The exhibition text establishes a vertical hierarchy, using the golden arrow shot into the heavens and transformed into a star as a metaphor for the artwork. Not every arrow launched skyward becomes a star, it suggests, thereby emphasizing the uniqueness and value of the artwork. Yet it may be more accurate to say that the exhibition visualizes the inspiration and impulses left behind by those who remember the significance of such an arrow, rather than celebrating a singular golden arrow that achieves artistic transcendence and autonomy.
+
+
 
 Touches and Breaths Shared Between One Another
 
@@ -986,18 +1022,24 @@ From this perspective, what we call art may be understood as a residue that bear
 The essence of art, symbolized by the golden arrow, shines brilliantly in the heavens. Yet most people live their lives upon the earth, building places to dwell. An arrow that travels not through the sky but across the ground may remain not as a star, but as a longing to become one.
 
 It survives through those who remember the Golden Arrow as a legend; through those who move their bodies in places where the arrow once passed and darkness has since returned; through those who leave traces behind and, in doing so, confirm one another's touch and breath.`,
-  'segye-essay-en': `Arts & Culture Column for Segye Ilbo
+  'segye-essay-en': `Arts & Culture Column for Segye Ilbo | Solo Exhibition 《Shapeless Loop》(Hakgojae, 2025)
 
 
-Shin Lisa (Art Historian | Head of Planning Team, Hakgojae)
-
-<For the Time After the End — Tenderly Calling Back Vanished Beings>
 
 
+
+
+Shin Lisa | Art Historian, Head of Planning Team, Hakgojae
+
+
+
+《For the Time After the End — Tenderly Calling Back Vanished Beings》
 
 Black lines and masses rise from deep blue pools and flowing streams. Visual artist Yoori (b. 1994) has continued to create works that draw up unnamed emotions and mental images lingering within the mind, unable to evaporate. Her solo exhibition 《Shapeless Loop》 (11/19–12/20), currently held at Hakgojae, begins from a deeply personal narrative. After confronting the deaths of loved ones three times in a single year, the artist came to contemplate existence and reality through the concrete themes of life and death. In particular, the experience of receiving birthday wishes at a funeral hall — her birthday having become the anniversary of her grandfather's death — led her to realize that birth and death are not separate events, much like the candles at a funeral and those atop a birthday cake resemble one another. This exhibition emerges precisely from that gaze directed toward the boundary between endings and beginnings, presence and absence.
 
-<At the Place Where Things Have Ended>
+
+
+At the Place Where Things Have Ended
 
 The exhibition consists of around fifty works spanning painting, sculpture, and installation, most of them rendered in black, white, and at times deep blue tones. What Yoori holds onto here are the small and subtle remnants left behind by beings that can no longer be seen. Rather than concealing or beautifying them, she chooses to reveal them honestly.
 
@@ -1005,7 +1047,9 @@ In the painting <Shapeless Loop>, which shares its title with the exhibition, th
 
 In <Sorrow Formed from What Remains>, beads taken from the artist's maternal grandmother's necklace are sealed in resin, embodying the wish that vanished beings might continue to remain somewhere, in some form. The tiny beads suspended within transparent masses transform into crystallizations of eternity, shaped into objects for "the time after death." The artist's hesitation over whether to preserve the relics intact or transform them into artworks was ultimately overcome by a desire for transcendence toward another dimension. Her words, "I had to do something," feel less like resignation than a determination to move forward through grief and mourning.
 
-<A Moving World>
+
+
+A Moving World
 
 Yoori reveals the links between presence and absence, life and death, not through abstract concepts but through concrete objects, scenes, and tactile experiences. Endless black loops, black threads forming volumes and ribbons as they rise toward the sky, and white rings resembling wings appear throughout the works.
 
@@ -1013,13 +1057,17 @@ In <Endlessly Rising and Constantly Emptying>, the structure of connection and c
 
 The belief that endings are not truly endings, and the fascination with transparent loops of connection, are also metaphorized through the relationship between the moon and the sea. Though physically too distant ever to touch, the moon's gravity continuously pulls the sea, keeping it in perpetual motion. In <The Pull Between Moon and Sea>, dark blue waves and faint moonlight blur into one another, erasing their boundaries. The artist places these two eternally separated entities together within a house-like space. Like two beings far apart yet powerfully connected, she captures relationships that continue after separation and invisible forces that nonetheless operate with intensity.
 
-<Fragments Born by Stepping Beyond the End>
+
+
+Fragments Born by Stepping Beyond the End
 
 In <The Long-Tailed Book>, reflections on connection and the will toward transformation emerge through the artist's working process itself. Originally folding a seven-meter-long painting like an accordion, Yoori witnessed existing scenes accidentally linking together and generating new combinations. Images jutting out like unreadable sentences gave rise to other languages and meanings, leading the artist to separate these scenes into independent small paintings and expand them into a series titled <The Long-Tailed Book: A Detached Sentence 1-14>. She then miniaturized and reconnected those paintings once more, giving birth to a form resembling a single "tail."
 
 The act of folding the original work like a book is less an act of destruction than one of exploring new possibilities. Though the fragmented images lose their original function, the artist turns that rupture into the starting point of another beginning. Instead of preserving what remains — the original painting — intact, she fragments and reconstructs it, allowing the weight of "what remains" to speak anew. Thus, the works born "tail after tail" survive by stepping beyond the end, reborn as new beings — somewhat grotesque, yet gleaming black like living creatures.
 
-<A Poem for What Remains>
+
+
+A Poem for What Remains
 
 In Yoori's world, where what remains is gazed upon and allowed to regain light, nothing is meaningless and no ending is truly final. Emotions once sunk heavily like grief and longing ascend lightly toward another dimension upon white wings and transparent loops of eternity.
 
@@ -1028,7 +1076,7 @@ Although this exhibition begins with loss and mourning, it clearly contains a wi
 Within Yoori's art — born from life and returning once more to life — we confront fear and sorrow honestly while simultaneously sensing the possibility of transcendence.
 
 To gaze upon the remaining fragments and quietly build poetry for the time after loss. In the deep stillness where sorrow settles and truth rises to the surface, on the final day of emotion, Yoori tenderly calls forth the nameless feelings and vanished beings left behind.`,
-  'sweep2026-text-html': `<div style="white-space:pre-line;">&lt;시간과 타자&gt; 전시 서문
+  'sweep2026-text-html': `<div style="white-space:pre-line;">《Time and the Other》(Sweep Seoul, 2026) Exhibition Essay
 
 
 어느 날. 눈을 감았다 뜬 그 짧은 시간 동안, 갑자기 너는 내가 절대 알 수 없는 - 낯선 사람이 된다. 입 안에서 계속 같은 단어를 굴리다 보면 그 단어가 어느새 너무 생경하게 느껴지는 것처럼. 둘은 맞대고, 보내고, 호흡하고, 만졌을 것이지만. 마치 서로를 알고, 형성하고, 조물거린 것처럼 느꼈을 테지만.
@@ -1051,7 +1099,15 @@ To gaze upon the remaining fragments and quietly build poetry for the time after
 
 
 글 | 이수민</div>`,
-  'sweep2026-text-html-en': `<div style="white-space:pre-line;">&lt;Time and the Other&gt;
+  'sweep2026-text-html-en': `<div style="white-space:pre-line;">《Time and the Other》(Sweep Seoul, 2026) Exhibition Essay
+
+
+
+
+
+
+Lee Soomin | Visual Artist
+
 
 
 One day, in the brief moment between closing your eyes and opening them again, you suddenly become someone I can never fully know—a stranger. It is like repeating a word over and over until it begins to sound unfamiliar. We may have faced one another, exchanged things, breathed together, touched one another. We may have felt as though we knew, shaped, and held each other in our hands.
@@ -1077,11 +1133,13 @@ Through Time and the Other, we are invited to reinterpret the number two and the
 
 And yet events continue to occur there. Things are broken again. From those cracks, forces are generated—the strength to tear oneself open and to look toward the Other. And at that moment, you are no longer this Other.
 
-You become you.
+You become you.</div>`,
+  'oaoa2026-text-en': `《Micro-Disaster》(oaoa gallery, 2026) Exhibition Essay
 
 
-Text by Soomin Lee</div>`,
-  'oaoa2026-text-en': `《Micro-Disaster》
+
+
+
 
 OAOA presents Micro-Disaster, a two-person exhibition by Yang Ha and Yoori, as its first exhibition of 2026. The exhibition takes as its subject the point at which social and personal tragedies converge within an individual, and the time that follows, naming this condition a "micro-disaster."
 
@@ -1120,9 +1178,16 @@ After the tragedies of both distant and intimate worlds have passed, each person
 이러한 시도는 전시장 내에서 레진과 양초의 물성을 통해 입체적으로 확장됩니다. 겹겹이 쌓인 레진의 층 사이로 드로잉과 천 조각이 투영되어 보이는 <1년-서로를 통과하며 축적되기>는 마치 지층처럼 흘러가는 시간에 물리적인 두께를 부여하고 붙잡아둡니다. 겹쳐진 형태와 색들은 마치 남겨진 사진이나 일기처럼, 이미 지나가버린 1년의 시간이 남겨둔 미미하고도 애틋한 흔적이 됩니다. 본질적으로 소멸해가는 우리에게 남겨지는 것들은, 결국 이렇게 쌓인 작은 기록과 기억들 뿐일지도 모릅니다. 또한 계단식 좌대 위에 놓인 서른 개의 양초 달력 <30일-잠정적 형상들>은 현재를 관통하는 시간의 직관적인 초상이 되어줍니다. 타는 촛불과 녹아내리는 초는 되돌릴 수 없이 진행되는 시간의 비가역성을 은유합니다. 결코 예측할 수도, 막을 수도 없다는 점에서 시간과 재난은 닮아있습니다. 유리는 그 압도적인 힘에 집어삼켜지는 대신 시간의 흐름을 조각내고 질서를 부여합니다. 두려움과 무력함에 맞서 오늘을 살아내려는 이 조용하고도 능동적인 움직임은 우리에게 비극 이후를 살아낼 단단한 동력이 되어줍니다.
 
 먼 곳과 가까운 곳의 비극이 지나간 뒤에는 각자에게 남겨진 몫이 있습니다. 비극이 내 일상의 식탁 위까지 도착했음을 직시하고 정면으로 응시하는 양하의 시선과, 예고 없이 무너진 시간의 공백을 성실히 이어 붙여 삶의 지층을 재건하는 유리의 의지는 전시장 곳곳에서 공명합니다. 사회가 정한 안전한 거리나 적당한 기간에 슬픔을 맞추지 않고, 자신만의 방식으로 재난 이후를 살아가는 두 작가의 기록이 우리 각자에게 작은 용기가 되고, <0.1%의 애정>을 더해보는 계기가 되길 바랍니다.`,
-  'daejeon2024-text-en': `《Mysterious Solidarities of Messengers》
+  'daejeon2024-text-en': `《Mysterious Solidarities of Messengers》(Daejeon Art Centre, 2024) Exhibition Essay
 
-Joo-ok Han (Independent Curator)
+
+
+
+
+
+Han Joo-ok | Independent Curator
+
+
 
 The exhibition Mysterious Solidarities of Messengers explores the totality of unique sensations and empathic experiences occurring between humans, nature, and art, metaphorically represented through the realm of messengers.
 Beginning with the hypothesis of the role of 'messengers,' the exhibition focuses on tracing their origin, serving as a starting point to stimulate imagination. Mythological beings like Hermes, who traverse between the earthly and underworld to convey messages of the gods, and figures like Gabriel from the Annunciation, derived from the Latin word 'annuntio' meaning 'to announce,' have occupied a realm converging towards intermediaries such as guides, mediators, and intermediaries excluded from explicit relationships. They appear and disappear repeatedly in the form of moving entities imbued with flickering lights, flashes, currents, and noise within circuits, traversing between concrete forms and the 'formless' absoluteness. Michel Serres (1930-2019), in his book Angels: A Modern Myth, describes 'angels' as embodiments of circulation that transcend localized concepts, providing an integral wholeness and expanding beyond. Messengers form relationships with one or more others, serving as conduits that unfold vertical and horizontal paths, becoming a link towards the world, and thereby forging a new epistemological map. In accordance with this unfolding, the exhibition explores the potential and forms of numerous entities surrounding us, unseen and examines the possibility of existence forms that are difficult to articulate in language. In the realm of the unknown, the potential to recognize the speaker emerges from the autonomous practice of sculptural language and art, manifested in the 'selected senses' and 'forms of combination.' The exhibition warmly embraces the role and function of the 'messenger' in acknowledging the fundamental vitality between material and immaterial elements that constitute artworks.
@@ -1133,6 +1198,16 @@ The origin of Hermes is from 'herma', and the derived word from here is 'hermeti
 
 Leebinsoyeon sensitively handles various media such as video, installation, and digital painting, paying attention to the various situations surrounding us and the relationships unfolding within them. The starting point of this exhibition, Fairy Mobility investment seminar video: The Orphan engineering (2023), traces the realm of movement between senders and receivers embedded in humans, culture, and nature, and the disappearing message delivery system, seeking its origin in the 'fairy ring,' also known as the pixie ring drawn by fairies. On the other hand, She presents the installation work Ring Ring (2024), intertwining speculative imaginations based on the unique character from Korean family relationships and childhood incidents between the artist and her aunt. During teleportation from one space to another in the 3D CG online game 'Second Life,' You Lee lost parts of her avatar's body due to a graphic error. This experience naturally syncs with the artist's personal time spent immigrating to New Zealand and the UK and engaging in a long-distance relationship (LDR). The sensation and concept of 'connection' inherent in the body are projected into images mediated by both reality and electronic media, functioning as an inevitable methodology throughout the work. Bae In Sook has been creating sound devices completed by interaction by combining music and installations, forming a principle in which the body immerses itself in the artwork. Last spring and summer, the artist recorded the sounds of birds in forests across Gyeonggi-do, Gangwon-do, Jeju Island, and other regions. The birds appeared precisely during the darkest and quietest hours before dawn, creating an atmosphere akin to mirages. Simeon Pease Cheney(1818~1890) transcribed the songs of birds, interpreting the sounds of nature into the language of music. Similarly, the artist translates the experience of dominating the entire space through sound alone into an installation with eight speaker boxes and LED lights. Yoori begins her work by paying attention to the 'senses' that respond to daily experiences and emotions. In the process, she breaks away from the usage of 'nouns and verbs dependent on materiality' in the 'dimension' where language cannot be articulated, sharpening her 'keen sensitivity' towards a 'communication system.' The painting work, dispersed from the dimension of 'time and existence', is installed together with a four-piece work entitled Too Heavy to Flip (2023-2024), also called an 'artist book.' The artist recalls the fleeting moment of turning a single page. Holding onto the belief that one can perceive, and the expectation that one can amplify unheard voices, she bridges the gap between numerous senders and receivers. Koh San Keum has been exploring the principles of form in visual frameworks by dissecting screens based on textual systems such as novels, newspapers, poetry, philosophy books, and law books. She proceeds with the work by using tiny artificial pearls, the main material of the piece, to consistently arrange them according to the number of characters and spacing or to deconstruct sentence structures. Her approach to physical effort naturally removes the original semantic context, shining in a new dimension of language along with the inherent meaning embedded in the properties of the pearl. Lee San Oh records specific phrases and words acquired in the flow of neutrality between memory and unconsciousness with painting. She expands spontaneously emerging images, established as equivalent to the structure where writing occurs, from drawing into various media such as sculpture and painting. The artist's attempt to capture shapes that cannot be grasped through visual experiences is sublimated into the form of birds and supernatural images that appear throughout the artwork. The new work entitled "Guide" (2024), which traverses through human, city, myth, and nature, presenting their possibilities, and her sculptural works, resembling emerging from a painting, stitch the space as motifs of spirits and intermediate zones, transcending life and death, underground and aboveground, day and night.
 `,
+  'editorspick-text-html-en': `<div style="white-space:pre-line;"><b>Monthly Art, January 2026 issue [Editor's Pick] | Solo Exhibition 《Shapeless Loop》(Hakgojae, 2025) Exhibition Review</b>
+
+
+
+
+</div><div style="white-space:pre-wrap;font:inherit;">Everything has a name, and all entities that are grasped within the cognitive map of human perception—including phenomena that are visible or invisible—are defined through the signs of language used for communication. Yoori delves into the dense gaps of this vast world and captures thoughts and sensations that lie beyond the reach of human systems of signs in the form of paintings, objects, books and paper, or material bodies that are neither books nor paper.
+
+What Shapeless Loop binds together are fragments of everyday moments—nameless emotions and amorphous masses that merely drift by and vanish. Focusing on the theme of "connection" between such things, the artist expands the realm beyond language by giving shape to otherwise inexpressible streams of thought, either as translucent books or as forms painted onto canvases.
+
+The exhibition also presents a substantial selection from the artist's long-running "Artist Book" project alongside the paintings, offering viewers an opportunity to encounter the artist's thoughts in a more tangible way. Through works realized in diverse forms and materials, one can discover traces of humanity that, in the artist's own words, are "not fixed beings but beings that always exist in-between," and find loops that weave together fragments of life.</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:84px;"><img src="texts/editor's pick2.jpg" style="width:100%;display:block;"><img src="texts/editor's pick.jpg" style="width:100%;display:block;"></div>`,
   'editorspick-text': `Yoori: Shapeless Loop
 
 
@@ -1141,13 +1216,18 @@ Everything has a name, and all entities that are grasped within the cognitive ma
 What Shapeless Loop binds together are fragments of everyday moments—nameless emotions and amorphous masses that merely drift by and vanish. Focusing on the theme of "connection" between such things, the artist expands the realm beyond language by giving shape to otherwise inexpressible streams of thought, either as translucent books or as forms painted onto canvases.
 
 The exhibition also presents a substantial selection from the artist's long-running "Artist Book" project alongside the paintings, offering viewers an opportunity to encounter the artist's thoughts in a more tangible way. Through works realized in diverse forms and materials, one can discover traces of humanity that, in the artist's own words, are "not fixed beings but beings that always exist in-between," and find loops that weave together fragments of life.`,
-  'upandcoming-text-html-en': `<div style="white-space:pre-line;">Monthly Art February 2024 [UP-AND-COMING ARTISTS]
+  'upandcoming-text-html-en': `<div style="white-space:pre-line;"><b>Monthly Art, February 2024 issue [UP-AND-COMING ARTISTS]</b>
 
 
-Kim So-jung (Reporter, Monthly Art)
 
-&lt;A Poem Sent to Beings Uncalled by Language&gt;
 
+
+
+Kim So-jung | Reporter, Monthly Art
+
+
+
+《A Poem Sent to Beings Uncalled by Language》
 
 We have all had such an experience. A commonplace word suddenly becomes strangely unfamiliar, and in that moment we witness the object it denotes—usually left unnoticed in the ordinariness of everyday life—becoming "simulated" with the overwhelming presence of an elephant in the room. Language, as a social contract, is marked by all kinds of norms: standard rules, prescribed exceptions, and categories of usage. Every social act through which human beings name what is visible, imagine what is not, establish systems of thought, define phenomena, and communicate with others has originated from—and evolved through—the material of language.
 
@@ -1162,12 +1242,18 @@ By constructing his canvases with ineffable subjects and uniquely heavy colors, 
 Yoori believes that even if language permeates the entire world, multiplying infinitely and surviving across history, time, and generations, there will always remain blind spots forever beyond its reach—mysterious domains untouched by words. And so, within the dwelling she has created, where one can momentarily step outside the world imitated by language, we are free to enjoy the detours of unfamiliar words with greater ease.</div>
 <div style="white-space:pre-line;font-size:0.85em;margin-top:1em;"><sup>1</sup> Kim Chun-su's poem Flower concerns the object (or human being) that acquires existential status only when its name is called and its existence recognized.</div>`,
   'pokettales-link-html': `<div>More details : <a href="https://pokettales.com/Yoori-Double-Bind" target="_blank" style="color:inherit;">https://pokettales.com/Yoori-Double-Bind</a></div>`,
-  'in-text-html-en': `<div style="white-space:pre-line;">《Bind Loosely &amp; Loosen Tightly》
+  'in-text-html-en': `<div style="white-space:pre-line;"><b>Solo Exhibition 《Bind Loosely & Loosen Tightly》(Gallery IN HQ, 2023) Exhibition Essay</b>
 
 
-Mohee (Independent Curator)
 
-&lt;The Age of Silence and Pensées of the Night&gt;
+
+
+
+Mohee | Independent Curator
+
+
+
+《The Age of Silence and Pensées of the Night》
 
 Nicole Krauss once wrote that in the age of silence, people did not communicate less; rather, they communicated more. The earliest language of that time was gesture, and there was no distinction between the gestures of language and the gestures of life. "Building a house or preparing food, for example, was a form of expression no less meaningful than a gesture that conveyed 'I love you' or 'I mean it.'"<sup>1</sup> It was an era in which every expression carried its own unique weight. Longing for a time I have never known, I find myself measuring the weight of today's words and writing. Language that has left our bodies and lingers in the air. When we momentarily step away from it—when we grasp what cannot be conveyed through speech and text—something finally becomes perceptible. Rather than lamenting the inadequacy of words, Yoori quietly attends to the brief silences that connect one word to another. As in the age of silence, her paintings blur the boundaries between the landscapes of life and those of language. Words that slip through the gaps between clearly held words, wavering phrases and sentences, are barely held together on the surface of her paintings.
 
@@ -1182,14 +1268,18 @@ There is something curiously similar between silence, understood as "a state of 
 Amid the quiet order of things, there are paintings made without driving away silence or the night—paintings that somehow continue to speak, even without words or light.</div>
 <div style="white-space:pre-line;font-size:0.85em;margin-top:2.5em;"><sup>1</sup> Nicole Krauss, The History of Love, translated by Min Eun-young (Munhakdongne, 2020), p.111.
 <sup>2</sup> Peripheral vision refers to the visual capacity of the outer field of view. Though less acute and less sensitive to color than central vision, it is especially responsive to dim light and movement. (Standard Korean Language Dictionary).</div>`,
-  'review-text-en': `《Shapeless Loop》 : Exhibition Review
+  'review-text-en': `Solo Exhibition 《Shapeless Loop》(Hakgojae, 2025) Exhibition Review
 
 
-Kim Haeseo (Writer)
-
-<Here Is Where We Meet>
 
 
+
+
+Kim Haeseo | Writer
+
+
+
+《Here Is Where We Meet》
 
 I once had a white dog. His tail was long and sleek, and whenever he stood in the sunlight, his dark eyes took on a sharp, cola-brown hue. A Jindo mix with alert, pricked ears. We called him Heunggu.
 
@@ -1225,10 +1315,15 @@ I still visit occasionally, as a stranger from a distant city, and give some aff
 
 
 Translated by Joosang`,
-  'pageroom-text-en': `Solo Exhibition 《Non-existent Day》 Pageroom8, 2024
+  'pageroom-text-en': `Solo Exhibition 《Non-existent Day》(Pageroom8, 2024) Exhibition Essay
 
 
-Jungwon Park (Director of Pageroom8)
+
+
+
+
+Jungwon Park | Director of Pageroom8
+
 
 
 Non-existent Day is about the point at which one can glimpse the intuition through which the images in Yoori's paintings come into being. Before discussing this, I would like to begin with a brief reflection on a work I encountered in November 2022, 〈A Temporary Scene〉. At the time, Yoori's works dealt with things that reside in realms beyond the reach of language. They featured a ladder climbed by stepping on wings, a woman watering the sea, and a duck with wheels. They seemed to momentarily hold, in image form, those things that could not quite be articulated in words yet evoked a quiet smile, or moments that visual perception alone could not fully grasp. The forms of that period appeared as though even mourning had been folded into the emotion of happiness. Yet 〈A Temporary Scene〉 (2022) was somewhat different. True to its title, it fully embodied a landscape that existed only provisionally. Deep green grass painted onto a wooden panel as if planted there, a rainbow suspended in a sky that seemed neither day nor night, and mounds of clay apparently being kneaded by the artist, delaying their determination into any fixed shape, while the veil covering them created a peculiar tension. Excavated by the emotions welling up within the artist's body somewhere between mirage and presence, these images continually invited anticipation for the stories yet to come. Non-existent Day foretells a scene in which another form emerges, as though lifting the veil draped over the mound in 〈A Temporary Scene〉.
@@ -1568,10 +1663,20 @@ function onShowClick(item, el) {
     if (item.textKey.includes('-html')) {
       textContent.innerHTML = textsContent[item.textKey] || '';
     } else {
-      const pre = document.createElement('pre');
-      pre.style.cssText = 'white-space:pre-wrap;font:inherit;margin:0;';
-      pre.textContent = textsContent[item.textKey] || '';
-      textContent.appendChild(pre);
+      const text = textsContent[item.textKey] || '';
+      const nlIdx = text.indexOf('\n');
+      const firstLine = nlIdx >= 0 ? text.slice(0, nlIdx) : text;
+      const rest = nlIdx >= 0 ? text.slice(nlIdx) : '';
+      const b = document.createElement('b');
+      b.style.display = 'block';
+      b.textContent = firstLine;
+      textContent.appendChild(b);
+      if (rest) {
+        const pre = document.createElement('pre');
+        pre.style.cssText = 'white-space:pre-wrap;font:inherit;margin:0;';
+        pre.textContent = rest;
+        textContent.appendChild(pre);
+      }
     }
     if (item.textImgPath) {
       const img = document.createElement('img');
