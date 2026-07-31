@@ -1967,7 +1967,7 @@ menuToggle.addEventListener('click', () => { if (menuPanel.classList.contains('o
 menuCloseBtn.addEventListener('click', closeMenu);
 if (window.innerWidth > 768) openMenu();
 restoreStateFromURL();
-if (!window.location.search) startGhosts();
+if (!window.location.search) requestAnimationFrame(() => startGhosts());
 </script>
 </body>
 </html>
