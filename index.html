@@ -24,9 +24,10 @@
       <img class="left-image" id="leftImage" src="" alt="">
     </div>
     <div class="right" id="rightPanel">
-      <img class="right-cover" id="rightCover" src="image/landingpage/landing.jpg" alt="">
+      <img class="right-cover" id="rightCover" src="" alt="">
       <div class="project-images" id="projectImages"></div>
       <div class="text-content" id="textContent"></div>
+      <img class="cv-bg-image" id="cvBgImage" src="image/back/drawing1.png" alt="">
       <div id="splitView" style="display:none; width:100%; height:100%;"></div>
     </div>
   </div>
@@ -1360,6 +1361,7 @@ const rightCover   = document.getElementById('rightCover');
 const projectImgs  = document.getElementById('projectImages');
 const textContent  = document.getElementById('textContent');
 const splitView    = document.getElementById('splitView');
+const cvBgImage    = document.getElementById('cvBgImage');
 const lightbox      = document.getElementById('lightbox');
 const lightboxImg   = document.getElementById('lightboxImg');
 const lightboxPrev  = document.getElementById('lightboxPrev');
@@ -1522,6 +1524,8 @@ function onNavClick(key, el) {
   langBtn.classList.add('content-open');
   menuToggle.classList.add('content-open');
   rightCover.classList.add('hidden');
+  if (key === 'cv') cvBgImage.classList.add('active');
+  else cvBgImage.classList.remove('active');
   projectImgs.classList.remove('active');
   projectImgs.classList.remove('grid-2');
   projectImgs.classList.remove('grid-3');
@@ -1546,6 +1550,7 @@ function onShowClick(item, el) {
   langBtn.classList.add('content-open');
   menuToggle.classList.add('content-open');
   rightCover.classList.add('hidden');
+  cvBgImage.classList.remove('active');
 
   if (item.splitItems || item.splitImg || item.splitImgs) {
     projectImgs.classList.remove('active');
@@ -1703,6 +1708,7 @@ function returnToLanding() {
   splitView.style.display = 'none';
   splitView.innerHTML = '';
   rightCover.classList.remove('hidden');
+  cvBgImage.classList.remove('active');
   rightPanel.scrollTop = 0;
   startGhosts();
 }

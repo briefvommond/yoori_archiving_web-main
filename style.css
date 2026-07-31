@@ -236,18 +236,29 @@ html, body {
 
 /* ── LANDING COVER ────────────────────────────────── */
 .right-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  z-index: 1;
+  display: none;
 }
 
 .right-cover.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── CV 배경 이미지 ───────────────────────────────── */
+.cv-bg-image {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 37.5vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cv-bg-image.active {
+  display: block;
 }
 
 /* ── 프로젝트 이미지 ──────────────────────────────── */
