@@ -1844,7 +1844,7 @@ menuToggle.addEventListener('click', () => { if (menuPanel.classList.contains('o
 menuCloseBtn.addEventListener('click', closeMenu);
 if (window.innerWidth > 768) openMenu();
 restoreStateFromURL();
-if (!window.location.search) requestAnimationFrame(() => startGhosts());
+if (!window.location.search) setTimeout(startGhosts, 200);
 </script>
 </body>
 </html>
