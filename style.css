@@ -402,8 +402,7 @@ html, body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-bottom: 50vh;
-  padding-left: 10px;
+  padding: 10px 10px 50vh;
 }
 
 .split-row {
@@ -490,6 +489,10 @@ html, body {
   }
 
   .project-images {
+    padding: 52px 10px 50vh;
+  }
+
+  .split-view {
     padding: 52px 10px 50vh;
   }
 
