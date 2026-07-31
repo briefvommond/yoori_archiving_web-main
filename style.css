@@ -507,6 +507,15 @@ html, body {
     width: 100%;
     padding: 20px 24px;
   }
+
+  .cv-bg-image.active {
+    width: 25vw;
+    height: 25vh;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    object-fit: contain;
+  }
 }
 
 .contact-link {
